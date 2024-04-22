@@ -1,6 +1,6 @@
 {
-  "label": "2. Search algorithms",
-  "position": 3,
+  "label": "Search algorithms",
+  "position": 2,
   "link": {
     "type": "generated-index",
     "description": "Searching algorithms locate items efficiently in data, like linear or binary search."

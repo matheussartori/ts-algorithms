@@ -1,0 +1,55 @@
+---
+sidebar_position: 1
+---
+
+# Linear search
+
+### Introduction
+
+Linear search, also known as sequential search, is a straightforward algorithm used to find a target value within a list or an array. This search method sequentially checks each element of the list until a match is found or until all the elements have been examined.
+
+To comprehend linear search in TypeScript, let's consider a basic example. Suppose we have an array of numbers:
+
+```typescript
+const numbers: number[] = [10, 5, 8, 2, 6, 3]
+```
+
+Now, let's say we want to find the index of a specific number, let's say 6. We would write a linear search function like this:
+
+```typescript
+function linearSearch(arr: number[], target: number): number {
+  for (let i = 0; i < arr.length; i++) { // Loop through the array
+    if (arr[i] === target) { // Checks if the current element is equal to the target
+      return i // Return the index if the target is found
+    }
+  }
+  return -1 // Return -1 if the target is not found
+}
+```
+
+Now, let's use this function to find the index of the number 6 in the numbers array:
+
+```typescript
+const targetIndex = linearSearch(numbers, 6)
+console.log("Index of 6:", targetIndex) // Output: Index of 6: 4
+```
+
+The function returns 4, which is the index of the number 6 in the numbers array.
+
+Linear search is a straightforward algorithm, which scans through each element of an array until finding a match. However, it poses efficiency concerns, particularly with large datasets. As the size of the dataset grows, the time taken for the search increases proportionally.
+
+This inefficiency becomes more pronounced compared to other search algorithms. Despite its simplicity and ease of implementation, its practicality diminishes when dealing with substantial amounts of data. Nonetheless, linear search remains foundational in computer science and aids in grasping more intricate search algorithms.
+
+### Other methods of linear search
+
+#### Using `findIndex` Method:
+
+The [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) method in TypeScript's array prototype searches for an element that satisfies the provided testing function. Here's how you can utilize findIndex:
+
+```typescript
+function linearSearchFindIndex(arr: number[], target: number): number {
+  return arr.findIndex(num => num === target)
+}
+```
+
+Is it possible to use other methods like [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) or [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), but findIndex it's the most efficient for this case.

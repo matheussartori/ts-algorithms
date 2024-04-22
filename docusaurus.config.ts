@@ -121,7 +121,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+      copyright: `Made with 💙 by Matheus Sartori. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

@@ -17,6 +17,8 @@ Let's dive in and start our journey into the world of algorithms and data struct
 - [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
   - After installation, verify that the commands `node -v` and `npm -v` are functioning in your terminal. You may need to restart your system for these commands to work properly.
+  - **IMPORTANT!** You may want to install a version manager for Node.js, such as [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows). These tools allow you to switch between different versions of Node.js easily, being very useful when working on multiple projects with different Node.js versions.
+  - **LINUX/MAC USERS:** If you installed node through the `nvm`, you can install global packages with the `-g` flag normally. If you installed node through the official website, you may need to use `sudo` to install global packages.
 
 - Any code editor or IDE of your choice. We recommend using [Visual Studio Code](https://code.visualstudio.com/), but here are some other popular options:
   - [Fleet](https://www.jetbrains.com/fleet/)
@@ -84,7 +86,7 @@ Next, install the [Code Runner](https://marketplace.visualstudio.com/items?itemN
 
 ### What is tsc, tsx, npm and npx?
 
-- **`tsc`** is the TypeScript compiler. It compiles TypeScript code to JavaScript code. If you run in your terminal `tsc hello.ts`, it will generate a `hello.js` file.
+- `tsc` is the TypeScript compiler. It compiles TypeScript code to JavaScript code. If you run in your terminal `tsc hello.ts`, it will generate a `hello.js` file.
 - `tsx` is a TypeScript runner. It compiles and runs TypeScript code. If you run in your terminal `tsx hello.ts`, it will compile and run the `hello.ts` file, without generating a `hello.js` file.
 - `npm` is the Node.js package manager. It is used to install and manage packages. It comes with Node.js, so you don't need to install it separately.
 - `npx` is a package runner tool that comes with npm 5.2+. It is used to execute packages without installing them globally. You will use it to run installed packages in your project's `node_modules` directory.

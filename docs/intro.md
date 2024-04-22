@@ -66,3 +66,20 @@ You should see the following output if everything is set up correctly:
 ```bash
 Hello, world!
 ```
+
+### Optional: Running TypeScript code directly with Visual Studio Code
+
+If you wish to execute TypeScript code within VSCode, you'll need to install the [ts-node](https://www.npmjs.com/package/ts-node) package globally and the Code Runner extension. Execute the following command in your terminal:
+
+```bash
+npm i -g ts-node
+```
+
+Next, install the [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) extension in VSCode. Once installed, you can run your code by right-clicking on the editor and selecting Run Code, or by pressing Ctrl + Alt + N, or by clicking on the run icon in the top right corner.
+
+### What is tsc, tsx, npm and npx?
+
+- **`tsc`** is the TypeScript compiler. It compiles TypeScript code to JavaScript code. If you run in your terminal `tsc hello.ts`, it will generate a `hello.js` file.
+- `tsx` is a TypeScript runner. It compiles and runs TypeScript code. If you run in your terminal `tsx hello.ts`, it will compile and run the `hello.ts` file.
+- `npm` is the Node.js package manager. It is used to install and manage packages. It comes with Node.js, so you don't need to install it separately.
+- `npx` is a package runner tool that comes with npm 5.2+. It is used to execute packages without installing them globally. You will use it to run installed packages in your project's `node_modules` directory.

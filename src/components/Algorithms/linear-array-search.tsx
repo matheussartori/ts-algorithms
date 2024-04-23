@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import styles from './styles.module.css'
+import { Box } from '@site/src/algorithms/ui/box/box'
 
 interface LinearArraySearchProps {
   array: number[]
@@ -41,21 +42,13 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
       </div>
       <div style={{ display: 'flex' }}>
         {array.map((value, index) => (
-          <div
+          <Box
             key={index}
-            style={{
-              width: '50px',
-              height: '50px',
-              border: '1px solid black',
-              display: 'flex',
-              margin: '5px',
-              justifyContent: 'center',
-              alignItems: 'center'
-            }}
-            className={currentIndex === index && array[currentIndex] === element ? styles.found : currentIndex === index ? styles.active : ''}
+            isActive={currentIndex === index && array[currentIndex] === element}
+            isCurrent={currentIndex === index}
           >
             {value}
-          </div>
+          </Box>
         ))}
       </div>
     </div>

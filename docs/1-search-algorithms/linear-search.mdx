@@ -2,6 +2,8 @@
 sidebar_position: 1
 ---
 
+import { LinearArraySearch } from '../../src/components/Algorithms/linear-array-search'
+
 # Linear search
 
 ### Introduction
@@ -39,6 +41,10 @@ The function returns 4, which is the index of the number 6 in the numbers array.
 Linear search is a straightforward algorithm, which scans through each element of an array until finding a match. However, it poses efficiency concerns, particularly with large datasets. As the size of the dataset grows, the time taken for the search increases proportionally.
 
 This inefficiency becomes more pronounced compared to other search algorithms. Despite its simplicity and ease of implementation, its practicality diminishes when dealing with substantial amounts of data. Nonetheless, linear search remains foundational in computer science and aids in grasping more intricate search algorithms.
+
+### Visual example
+
+<LinearArraySearch array={[10, 5, 8, 2, 6, 3]} element={6} />
 
 ### Other methods of linear search
 

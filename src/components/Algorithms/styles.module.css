@@ -1,0 +1,7 @@
+.active {
+  background-color: var(--ifm-color-primary);
+}
+
+.found {
+  background-color: var(--ifm-color-success);
+}

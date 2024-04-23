@@ -17,14 +17,23 @@ Let's dive in and start our journey into the world of algorithms and data struct
 - [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
   - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
   - After installation, verify that the commands `node -v` and `npm -v` are functioning in your terminal. You may need to restart your system for these commands to work properly.
-  - **IMPORTANT!** You may want to install a version manager for Node.js, such as [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows). These tools allow you to switch between different versions of Node.js easily, being very useful when working on multiple projects with different Node.js versions.
-  - **LINUX/MAC USERS:** If you installed node through the `nvm`, you can install global packages with the `-g` flag normally. If you installed node through the official website, you may need to use `sudo` to install global packages.
-
 - Any code editor or IDE of your choice. We recommend using [Visual Studio Code](https://code.visualstudio.com/), but here are some other popular options:
   - [Fleet](https://www.jetbrains.com/fleet/)
   - [WebStorm](https://www.jetbrains.com/webstorm/)
   - [Zed](https://zed.dev/)
   - [Sublime Text](https://www.sublimetext.com/)
+
+:::info
+
+You may want to install a version manager for Node.js, such as [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows). These tools allow you to switch between different versions of Node.js easily, being very useful when working on multiple projects with different Node.js versions.
+
+:::
+
+:::important
+
+If you use Linux and you installed node through the `nvm`, you can install global packages with the `-g` flag normally. If you installed node through the official website, you may need to use `sudo` to install global packages.
+
+:::
 
 ### Running TypeScript code
 
@@ -50,8 +59,12 @@ The first approach is recommended because it allows you to have different versio
 
 Having it installed globally is also fine, but it's not recommended because it can lead to version conflicts between projects.
 
-**IMPORTANT!** If you're using the project installation method, you need to run the commands related to `tsc` and `tsx` with the `npx` prefix in the project's directory. If you're using the global installation method, you can run the `tsc` or `tsx` command from any directory.
+:::important
+
+If you're using the project installation method, you need to run the commands related to `tsc` and `tsx` with the `npx` prefix in the project's directory. If you're using the global installation method, you can run the `tsc` or `tsx` command from any directory.
 The guide will use the `npx` prefix for the project installation method, so make sure to remove the `npx` prefix if you're using the global installation method.
+
+:::
 
 #### 3. Hello World
 

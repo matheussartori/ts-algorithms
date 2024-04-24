@@ -14,8 +14,8 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_programmer_re_owql.svg').default,
     description: (
       <>
-        Dive into practical examples, exercises, and theory to understand algorithms
-        using TypeScript. Perfect for mastering algorithms for technical interviews.
+        Dive into practical examples, exercises, and theory to understand algorithms.
+        Perfect for acing technical interviews.
       </>
     ),
   },
@@ -24,7 +24,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require('@site/static/img/undraw_solution_mindset_re_57bf.svg').default,
     description: (
       <>
-        Explore real-world examples with TypeScript, allowing you to focus on understanding
+        Explore real-world examples, allowing you to focus on understanding
         the core concepts without worrying about setup or boilerplate code.
       </>
     ),

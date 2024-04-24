@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'TypeScript algorithms',
-  tagline: 'Learn data structure and algorithms with TS/JS.',
+  tagline: 'Become a expert at data structure and algorithms.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here

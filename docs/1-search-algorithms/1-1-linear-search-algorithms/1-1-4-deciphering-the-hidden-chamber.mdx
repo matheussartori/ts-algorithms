@@ -2,8 +2,34 @@
 sidebar_position: 4
 ---
 
+import { Editor } from '../../../src/algorithms/editor/editor'
+
 # 4. Deciphering the Hidden Chamber
 
-You're exploring a mysterious ancient cave filled with hidden chambers. In one of the chambers, you find an array of
-symbols carved on the walls. You deciphered that the symbol '5' indicates the hidden treasure's location. However, you
-need to find the chamber with the symbol '5' to uncover the treasure.
+![Deciphering the Hidden Chamber](./img/1-1-4.png)
+
+While exploring an ancient cave, you stumbled upon a series of chambers adorned with mysterious symbols. Each symbol
+corresponds to a hidden chamber within the cave. Given a two-dimensional array representing the layout of symbols on
+the cave walls, find the index of the chamber containing a specific symbol.
+
+If the symbol is not found in the cave, return -1.
+
+
+```typescript
+const caveLayout: number[][] = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+]
+const targetSymbol = 5
+findChamberIndexBySymbol(caveLayout, targetSymbol)
+// Expected Output: Index of the chamber with the symbol 5 (1)
+```
+
+<Editor
+  editorHeight={250}
+  args='[[1, 2, 3], [4, 5, 6], [7, 8, 9]], 5'
+  expectedResult="1"
+  initialCode={`function findChamberIndexBySymbol (caveLayout: number[][], targetSymbol: number): number {
+  return -1
+}`} />

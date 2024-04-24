@@ -24,7 +24,7 @@ export function Editor({ initialCode, expectedResult, args, returnValue, editorH
       const workerCode = `
         onmessage = function(e) {
           try {
-            const result = eval('(' + e.data.code + ')')(${args}, ${returnValue})
+            const result = eval('(' + e.data.code + ')')(${args})
             postMessage(result)
           } catch (error) {
             postMessage('Error: ' + error.message)

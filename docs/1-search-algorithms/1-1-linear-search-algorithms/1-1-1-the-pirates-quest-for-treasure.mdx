@@ -20,6 +20,11 @@ const targetBranches = 6
 findTreasureIndex(treeBranches, targetBranches) // Expected Output: Index of tree with 6 branches (2)
 ```
 
-<Editor initialCode={`function findTreasureIndex (treeBranches: number[], targetBranches: number): number {
+<Editor
+  editorHeight={150}
+  args="[2, 4, 6, 8, 10]"
+  returnValue="6"
+  expectedResult="2"
+  initialCode={`function findTreasureIndex (treeBranches: number[], targetBranches: number): number {
   return -1;
 }`} />

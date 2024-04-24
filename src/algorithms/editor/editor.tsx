@@ -68,7 +68,7 @@ export function Editor({ initialCode, expectedResult, args, returnValue, editorH
         value={code}
         onChange={(value) => setCode(value)}
       />
-      <div>
+      <div style={{ marginTop: '1rem' }}>
       {output !== "" && expectedResult == output ? (
         <SucessMDX />
       ) : output !== "" && expectedResult != output ? (

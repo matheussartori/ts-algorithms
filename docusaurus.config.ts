@@ -66,9 +66,9 @@ const config: Config = {
       items: [
         {
           type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
+          sidebarId: 'algorithmsSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Algorithms',
         },
         {
           href: 'https://github.com/matheussartori/ts-algorithms-docs',
@@ -84,7 +84,7 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
+              label: 'Algorithms',
               to: '/docs/getting-started',
             },
           ],

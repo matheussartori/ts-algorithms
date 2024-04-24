@@ -108,7 +108,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Made with 💙 by Matheus Sartori. Built with Docusaurus.`,
+      copyright: `Made with 💙 by Arcvs Team. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,

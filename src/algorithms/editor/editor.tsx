@@ -5,43 +5,52 @@ import { transpile } from 'typescript'
 
 interface EditorProps {
   initialCode?: string
-  tests?: string[]
 }
 
-export function Editor ({ initialCode, tests }) {
+export function Editor({ initialCode }: EditorProps) {
   const { colorMode } = useColorMode()
   const [output, setOutput] = useState('')
-  const [result, setResult] = useState('')
   const [code, setCode] = useState(initialCode ?? '')
 
   const executeCode = () => {
     try {
-      const jsCode = transpile(code)
-      const result = eval(`(${jsCode})([2,4,6,8,10], 6)`);
-      setOutput(result);
-    } catch (error) {
-      setOutput(`Error: ${error.message}`);
-    }
-  }
+      const workerCode = `
+        onmessage = function(e) {
+          try {
+            const result = eval('(' + e.data.code + ')')([1], 1)
+            postMessage(result)
+          } catch (error) {
+            postMessage('Error: ' + error.message)
+          }
+        }
+      `
 
-  const runTests = () => {
-    try {
-      const jsCode = transpile(code)
-      const result = eval(`(${jsCode})([2,4,6,8,10], 6)`)
-      setResult(result)
+      const blob = new Blob([workerCode], { type: 'application/javascript' })
+      const workerURL = URL.createObjectURL(blob)
+      const worker = new Worker(workerURL)
+
+      const timeout = setTimeout(() => {
+        worker.terminate()
+        setOutput('Error: Timeout reached. Execution took too long.')
+      }, 3000)
+
+      worker.onmessage = (e) => {
+        clearTimeout(timeout)
+        setOutput(e.data)
+      }
+
+      worker.postMessage({ code: transpile(code) })
     } catch (error) {
-      setResult(`Error: ${error.message}`);
+      setOutput(`Error: ${error.message}`)
     }
   }
 
   return (
     <>
-    <div style={{ display: 'flex', gap: '.5rem' }}>
-      <button className="button button--primary" onClick={executeCode}>Run code</button>
-      <button className="button button--secondary" onClick={runTests}>Submit</button>
-    </div>
-    <p>{output}</p>
-    <p>{result}</p>
+      <div style={{ display: 'flex', gap: '.5rem' }}>
+        <button className="button button--primary" onClick={executeCode}>Run code</button>
+      </div>
+      <p>{output}</p>
       <MonacoEditor
         height={300}
         defaultLanguage="typescript"

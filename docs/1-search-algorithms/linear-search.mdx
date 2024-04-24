@@ -19,7 +19,7 @@ const numbers: number[] = [10, 5, 8, 2, 6, 3]
 Now, let's say we want to find the index of a specific number, let's say 6. We would write a linear search function like this:
 
 ```typescript
-function linearSearch(arr: number[], target: number): number {
+function linearSearch (arr: number[], target: number): number {
   for (let i = 0; i < arr.length; i++) { // Loop through the array
     if (arr[i] === target) { // Checks if the current element is equal to the target
       return i // Return the index if the target is found
@@ -53,9 +53,16 @@ This inefficiency becomes more pronounced compared to other search algorithms. D
 The [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) method in TypeScript's array prototype searches for an element that satisfies the provided testing function. Here's how you can utilize findIndex:
 
 ```typescript
-function linearSearchFindIndex(arr: number[], target: number): number {
+function linearSearchFindIndex (arr: number[], target: number): number {
   return arr.findIndex(num => num === target)
 }
 ```
 
 Is it possible to use other methods like [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) or [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), but findIndex it's the most efficient for this case.
+
+### Use cases
+
+Linear search is commonly used in scenarios where you need to find a specific element within an array or a collection of elements. Here are some typical use cases:
+
+1. **Small Arrays**: Linear search is effective for small arrays where the overhead of implementing more complex search algorithms like binary search would outweigh the benefits.
+2. **Unordered Arrays**: When the array is not sorted, linear search remains a straightforward choice. Sorting the array before performing a search could introduce unnecessary complexity and overhead, making linear search a more practical option.

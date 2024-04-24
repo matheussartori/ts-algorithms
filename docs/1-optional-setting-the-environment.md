@@ -1,16 +1,18 @@
 ---
-sidebar_position: 1
+sidebar_position: 2
 ---
 
-# Getting Started
+# (Optional) Setting the environment
 
-Welcome to our guide for learning algorithms and data structures with TypeScript! We'll guide you through setting up TypeScript, ensuring you're equipped to start coding right away.
+:::warning
+
+You don't need to set up the environment on your computer to follow this guide; use this page only if your personal preference is to run the code locally on your computer. The exercises can be executed directly from the browser.
+
+:::
 
 If you're new to TypeScript, don't worry! We'll provide explanations and examples every step of the way to help you understand the fundamentals.
 
 If you're already familiar with TypeScript, you can skip this getting started and jump straight to the content.
-
-Let's dive in and start our journey into the world of algorithms and data structures!
 
 ### What you'll need
 
@@ -26,12 +28,6 @@ Let's dive in and start our journey into the world of algorithms and data struct
 :::info
 
 You may want to install a version manager for Node.js, such as [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows). These tools allow you to switch between different versions of Node.js easily, being very useful when working on multiple projects with different Node.js versions.
-
-:::
-
-:::important
-
-If you use Linux and you installed node through the `nvm`, you can install global packages with the `-g` flag normally. If you installed node through the official website, you may need to use `sudo` to install global packages.
 
 :::
 

@@ -17,7 +17,7 @@ export function Editor ({ initialCode, tests }) {
   const executeCode = () => {
     try {
       const jsCode = transpile(code)
-      const result = eval(`(${jsCode})()`);
+      const result = eval(`(${jsCode})([2,4,6,8,10], 6)`);
       setOutput(result);
     } catch (error) {
       setOutput(`Error: ${error.message}`);

@@ -13,15 +13,15 @@ A busca linear, também conhecida como busca sequencial, é um algoritmo usado p
 Para compreender a busca linear em TypeScript, vamos considerar um exemplo básico. Suponha que tenhamos um array de números:
 
 ```typescript
-const numbers: number[] = [10, 5, 8, 2, 6, 3]
+const numeros: number[] = [10, 5, 8, 2, 6, 3]
 ```
 
 Agora, digamos que queremos encontrar o índice de um número específico neste array, por exemplo o 6. Escreveríamos uma função de busca linear assim:
 
 ```typescript
-function linearSearch (arr: number[], target: number): number {
+function buscaLinear (arr: number[], alvo: number): number {
   for (let i = 0; i < arr.length; i++) { // Percorre o array
-    if (arr[i] === target) { // Verifica se o elemento atual é igual ao alvo
+    if (arr[i] === alvo) { // Verifica se o elemento atual é igual ao alvo
       return i // Retorna o índice se o alvo for encontrado
     }
   }
@@ -32,8 +32,8 @@ function linearSearch (arr: number[], target: number): number {
 Agora, vamos usar esta função para encontrar o índice do número 6 no array de números:
 
 ```typescript
-const targetIndex = linearSearch(numbers, 6)
-console.log("Index of 6:", targetIndex) // Saída: Índice do número 6: 4
+const targetIndex = buscaLinear(numeros, 6)
+console.log("Índice do número 6:", targetIndex) // Saída: Índice do número 6: 4
 ```
 
 A função retorna 4, que é o índice do número 6 no array de números.
@@ -55,8 +55,8 @@ O método [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Re
 procura por um elemento no array que satisfaça a função de teste fornecida. Veja como você pode usar o findIndex:
 
 ```typescript
-function linearSearchFindIndex (arr: number[], target: number): number {
-  return arr.findIndex(num => num === target)
+function buscaLinearFindIndex (arr: number[], alvo: number): number {
+  return arr.findIndex(num => num === alvo)
 }
 ```
 
@@ -69,5 +69,5 @@ que é geralmente o resultado esperado por um algoritmo de busca linear.
 
 A busca linear é comumente usada em cenários onde você precisa encontrar um elemento específico dentro de um array ou uma coleção de elementos. Aqui estão alguns casos de uso típicos:
 
-1. **Arrays Pequenos**: A busca linear é eficaz para arrays pequenos onde o custo adicional de implementar algoritmos de busca mais complexos, como a busca binária, seria maior do que os benefícios.
-2. **Arrays Não Ordenados**: Quando o array não está ordenado, a busca linear continua sendo uma escolha direta. Ordenar o array antes de realizar uma busca poderia introduzir complexidade e gastos de performance desnecessários, tornando a busca linear uma opção mais prática.
+1. **Arrays pequenos**: A busca linear é eficaz para arrays pequenos onde o custo adicional de implementar algoritmos de busca mais complexos, como a busca binária, seria maior do que os benefícios.
+2. **Arrays não ordenados**: Quando o array não está ordenado, a busca linear continua sendo uma escolha direta. Ordenar o array antes de realizar uma busca poderia introduzir complexidade e gastos de performance desnecessários, tornando a busca linear uma opção mais prática.

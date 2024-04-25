@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import styles from './styles.module.css'
 import { Box } from '@site/src/algorithms/ui/box/box'
 
 interface LinearArraySearchProps {

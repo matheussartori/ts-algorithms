@@ -58,7 +58,10 @@ function linearSearchFindIndex (arr: number[], target: number): number {
 }
 ```
 
-Is it possible to use other methods like [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find) or [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), but findIndex it's the most efficient for this case.
+Is it possible to use other methods like [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+or [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), but findIndex is the most efficient
+for this case because it stops when it finds the first occurrence, and because it already searches for the index, which is often expected
+by a linear search algorithm.
 
 ### Use cases
 

@@ -2,12 +2,12 @@
 sidebar_position: 1
 ---
 
-# Getting Started
+# Primeiros passos
 
-Welcome to our guide for learning algorithms and data structures with TypeScript!
+Bem-vindo ao nosso guia para aprender algoritmos e estruturas de dados com TypeScript!
 
-In this documentation, you will learn how to solve algorithms of different complexities using various data structures.
-Additionally, you can run the code directly from your browser, eliminating the need to install anything on your
-computer.
+Nesta documentação, você aprenderá como resolver algoritmos de diferentes complexidades usando várias estruturas de
+dados. Além disso, você pode executar o código diretamente do seu navegador, eliminando a necessidade de instalar
+qualquer coisa no seu computador.
 
-For instructions on running TypeScript code in your text editor locally, head to the next page.
+Para instruções sobre como executar código TypeScript no seu editor de texto localmente, vá para a próxima página.

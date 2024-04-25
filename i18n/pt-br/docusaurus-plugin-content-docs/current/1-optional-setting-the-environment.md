@@ -2,24 +2,26 @@
 sidebar_position: 2
 ---
 
-# (Optional) Setting the environment
+# (Opcional) Configurando o ambiente
 
 :::warning
 
-You don't need to set up the environment on your computer to follow this guide; use this page only if your personal preference is to run the code locally on your computer. The exercises can be executed directly from the browser.
+Você não precisa configurar o ambiente no seu computador para seguir este guia; use esta página apenas se sua
+preferência pessoal for executar o código localmente em seu computador. Os exercícios podem ser executados diretamente
+do navegador.
 
 :::
 
-If you're new to TypeScript, don't worry! We'll provide explanations and examples every step of the way to help you understand the fundamentals.
+Se você é novo no TypeScript, não se preocupe! Vamos fornecer explicações e exemplos a cada passo do caminho para ajudá-lo a entender os fundamentos.
 
-If you're already familiar with TypeScript, you can skip this getting started and jump straight to the content.
+Se você já está familiarizado com TypeScript, recomendo ir direto para a próxima página.
 
-### What you'll need
+### O que você vai precisar
 
-- [Node.js](https://nodejs.org/en/download/) version 20.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-  - After installation, verify that the commands `node -v` and `npm -v` are functioning in your terminal. You may need to restart your system for these commands to work properly.
-- Any code editor or IDE of your choice. We recommend using [Visual Studio Code](https://code.visualstudio.com/), but here are some other popular options:
+- [Node.js](https://nodejs.org/en/download/) versão 20.0 ou superior:
+  - Ao instalar o Node.js, é recomendável marcar todas as caixas de seleção relacionadas às dependências.
+  - Após a instalação, verifique se os comandos `node -v` e `npm -v` estão funcionando no seu terminal. Você pode precisar reiniciar seu sistema para que esses comandos funcionem corretamente.
+- Qualquer editor de código ou IDE de sua escolha. Recomendamos o uso do [Visual Studio Code](https://code.visualstudio.com/), mas aqui estão algumas outras opções populares:
   - [Fleet](https://www.jetbrains.com/fleet/)
   - [WebStorm](https://www.jetbrains.com/webstorm/)
   - [Zed](https://zed.dev/)
@@ -27,75 +29,75 @@ If you're already familiar with TypeScript, you can skip this getting started an
 
 :::info
 
-You may want to install a version manager for Node.js, such as [nvm](https://github.com/nvm-sh/nvm) or [nvm-windows](https://github.com/coreybutler/nvm-windows). These tools allow you to switch between different versions of Node.js easily, being very useful when working on multiple projects with different Node.js versions.
+Você pode optar por instalar um gerenciador de versões para o Node.js, como o [nvm](https://github.com/nvm-sh/nvm) ou [nvm-windows](https://github.com/coreybutler/nvm-windows). Essas ferramentas permitem alternar facilmente entre diferentes versões do Node.js, sendo muito úteis ao trabalhar em vários projetos com diferentes versões do Node.js.
 
 :::
 
-### Running TypeScript code
+### Executando código TypeScript
 
-To run TypeScript code, you need to have TypeScript installed. Below are the installation methods:
+Para executar os códigos, você precisa ter o TypeScript instalado. Abaixo estão os métodos de instalação:
 
-#### 1. Project installation (recommended):
-  - Create an empty directory for your project, and navigate to it in your terminal.
-  - Run the following commands in your terminal:
+#### 1. Instalação por projeto (recomendado):
+  - Crie um diretório vazio para o seu projeto e navegue até ele no seu terminal.
+  - Execute os seguintes comandos no seu terminal:
     ```bash
     npm init -y
     npm install typescript tsx -D
     ```
-  - After installation, ensure that the commands `npx tsc -v` and `npx tsx -v` are functioning in your terminal, returning the version of TypeScript installed.
+  - Após a instalação, verifique se os comandos `npx tsc -v` e `npx tsx -v` estão funcionando no seu terminal, retornando a versão do TypeScript instalada.
 
-#### 2. Global installation:
-  - Run the following command in your terminal:
+#### 2. Instalação global:
+  - Execute o seguinte comando no seu terminal:
     ```bash
     npm install typescript tsx -g
     ```
-  - After installation, ensure that the commands `tsc -v` and `tsx -v` are functioning in your terminal, returning the version of TypeScript installed.
+  - Após a instalação, verifique se os comandos `tsc -v` e `tsx -v` estão funcionando no seu terminal, retornando a versão do TypeScript instalada.
 
-The first approach is recommended because it allows you to have different versions of TypeScript for different projects. The `npx` prefix runs the TypeScript version installed in the project's `node_modules` directory.
+A primeira abordagem é recomendada porque permite ter diferentes versões do TypeScript para diferentes projetos. O prefixo `npx` executa a versão do TypeScript instalada no diretório `node_modules` do projeto.
 
-Having it installed globally is also fine, but it's not recommended because it can lead to version conflicts between projects.
+Ter o TypeScript instalado globalmente também é aceitável, mas não é recomendado porque pode levar a conflitos de versão entre projetos.
 
 :::important
 
-If you're using the project installation method, you need to run the commands related to `tsc` and `tsx` with the `npx` prefix in the project's directory. If you're using the global installation method, you can run the `tsc` or `tsx` command from any directory.
-The guide will use the `npx` prefix for the project installation method, so make sure to remove the `npx` prefix if you're using the global installation method.
+Se você estiver usando o método de instalação no projeto, precisa executar os comandos relacionados a `tsc` e `tsx` com o prefixo `npx` no diretório do projeto. Se você estiver usando o método de instalação global, pode executar o comando `tsc` ou `tsx` de qualquer diretório.
+O guia usará o prefixo `npx` para o método de instalação por projeto, então certifique-se de remover o prefixo `npx` se estiver usando o método de instalação global.
 
 :::
 
 #### 3. Hello World
 
-Create a new file named `hello.ts` with the following content:
+Crie um novo arquivo chamado `hello.ts` com o seguinte conteúdo:
 
 ```typescript
 const message: string = 'Hello, world!'
 console.log(message)
 ```
 
-With the terminal open in the same directory as the file, run the following command:
+Com o terminal aberto no mesmo diretório do arquivo, execute o seguinte comando:
 
 ```bash
 npx tsx hello.ts
 ```
 
-You should see the following output if everything is set up correctly:
+Você deverá ver a seguinte saída se tudo estiver configurado corretamente:
 
 ```bash
 Hello, world!
 ```
 
-### Optional: Running TypeScript code directly with Visual Studio Code
+### Opcional: Executando código TypeScript diretamente com o Visual Studio Code
 
-If you wish to execute TypeScript code within VSCode, you'll need to install the [ts-node](https://www.npmjs.com/package/ts-node) package globally and the Code Runner extension. Execute the following command in your terminal:
+Se você deseja executar código TypeScript dentro do VSCode, precisará instalar globalmente o pacote `ts-node` e a extensão Code Runner. Execute o seguinte comando no seu terminal:
 
 ```bash
 npm i -g ts-node
 ```
 
-Next, install the [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) extension in VSCode. Once installed, you can run your code by right-clicking on the editor and selecting Run Code, or by pressing Ctrl + Alt + N, or by clicking on the run icon in the top right corner.
+Em seguida, instale a extensão [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) no VSCode. Depois de instalada, você pode executar seu código clicando com o botão direito do mouse no editor e selecionando "Run Code", ou pressionando Ctrl + Alt + N, ou clicando no ícone de execução no canto superior direito.
 
-### What is tsc, tsx, npm and npx?
+### O que é tsc, tsx, npm e npx?
 
-- `tsc` is the TypeScript compiler. It compiles TypeScript code to JavaScript code. If you run in your terminal `tsc hello.ts`, it will generate a `hello.js` file.
-- `tsx` is a TypeScript runner. It compiles and runs TypeScript code. If you run in your terminal `tsx hello.ts`, it will compile and run the `hello.ts` file, without generating a `hello.js` file.
-- `npm` is the Node.js package manager. It is used to install and manage packages. It comes with Node.js, so you don't need to install it separately.
-- `npx` is a package runner tool that comes with npm 5.2+. It is used to execute packages without installing them globally. You will use it to run installed packages in your project's `node_modules` directory.
+- `tsc` é o compilador TypeScript. Ele compila código TypeScript para código JavaScript. Se você executar no seu terminal 'tsc hello.ts', ele irá gerar um arquivo 'hello.js'.
+- `tsx` compila e executa código TypeScript. Se você executar no seu terminal `tsx hello.ts`, ele irá compilar e executar o arquivo `hello.ts`, sem gerar um arquivo `hello.js`.
+- `npm` é o gerenciador de pacotes do Node.js. É usado para instalar e gerenciar pacotes. Ele vem com o Node.js, então você não precisa instalá-lo separadamente.
+- `npx` é uma ferramenta de execução de pacotes que vem com o npm 5.2+. É usado para executar pacotes sem instalá-los globalmente. Você o usará para executar pacotes instalados no diretório `node_modules` do seu projeto.

@@ -94,10 +94,10 @@ npm i -g ts-node
 ```
 
 Em seguida, instale a extensão [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) no VSCode. Depois de instalada, você pode executar seu código clicando com o botão direito do mouse no editor e selecionando "Run Code", ou pressionando Ctrl + Alt + N, ou clicando no ícone de execução no canto superior direito.
-
+1
 ### O que é tsc, tsx, npm e npx?
 
-- `tsc` é o compilador TypeScript. Ele compila código TypeScript para código JavaScript. Se você executar no seu terminal 'tsc hello.ts', ele irá gerar um arquivo 'hello.js'.
+- `tsc` é o compilador TypeScript. Ele compila código TypeScript para código JavaScript. Se você executar no seu terminal `tsc hello.ts`, ele irá gerar um arquivo `hello.js`.
 - `tsx` compila e executa código TypeScript. Se você executar no seu terminal `tsx hello.ts`, ele irá compilar e executar o arquivo `hello.ts`, sem gerar um arquivo `hello.js`.
 - `npm` é o gerenciador de pacotes do Node.js. É usado para instalar e gerenciar pacotes. Ele vem com o Node.js, então você não precisa instalá-lo separadamente.
-- `npx` é uma ferramenta de execução de pacotes que vem com o npm 5.2+. É usado para executar pacotes sem instalá-los globalmente. Você o usará para executar pacotes instalados no diretório `node_modules` do seu projeto.
+- `npx` é uma ferramenta de execução de pacotes que vem com o npm. É usado para executar pacotes sem instalá-los globalmente. Você o usará para executar pacotes instalados no diretório `node_modules` do seu projeto.

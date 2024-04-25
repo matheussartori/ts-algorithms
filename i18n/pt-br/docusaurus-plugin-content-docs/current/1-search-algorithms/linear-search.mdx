@@ -4,53 +4,55 @@ sidebar_position: 1
 
 import { LinearArraySearch } from '../../../../../src/components/Algorithms/linear-array-search'
 
-# Linear search
+# Busca linear
 
-### Introduction
+### Introdução
 
-Linear search, also known as sequential search, is a straightforward algorithm used to find a target value within a list or an array. This search method sequentially checks each element of the list until a match is found or until all the elements have been examined.
+A busca linear, também conhecida como busca sequencial, é um algoritmo usado para encontrar um valor dentro de uma lista ou um array. Este método de busca verifica sequencialmente cada elemento da lista até que uma correspondência seja encontrada ou até que todos os elementos tenham sido examinados.
 
-To comprehend linear search in TypeScript, let's consider a basic example. Suppose we have an array of numbers:
+Para compreender a busca linear em TypeScript, vamos considerar um exemplo básico. Suponha que tenhamos um array de números:
 
 ```typescript
 const numbers: number[] = [10, 5, 8, 2, 6, 3]
 ```
 
-Now, let's say we want to find the index of a specific number, let's say 6. We would write a linear search function like this:
+Agora, digamos que queremos encontrar o índice de um número específico neste array, por exemplo o 6. Escreveríamos uma função de busca linear assim:
 
 ```typescript
 function linearSearch (arr: number[], target: number): number {
-  for (let i = 0; i < arr.length; i++) { // Loop through the array
-    if (arr[i] === target) { // Checks if the current element is equal to the target
-      return i // Return the index if the target is found
+  for (let i = 0; i < arr.length; i++) { // Percorre o array
+    if (arr[i] === target) { // Verifica se o elemento atual é igual ao alvo
+      return i // Retorna o índice se o alvo for encontrado
     }
   }
-  return -1 // Return -1 if the target is not found
+  return -1 // Retorna -1 se o alvo não for encontrado
 }
 ```
 
-Now, let's use this function to find the index of the number 6 in the numbers array:
+Agora, vamos usar esta função para encontrar o índice do número 6 no array de números:
 
 ```typescript
 const targetIndex = linearSearch(numbers, 6)
-console.log("Index of 6:", targetIndex) // Output: Index of 6: 4
+console.log("Index of 6:", targetIndex) // Saída: Índice do número 6: 4
 ```
 
-The function returns 4, which is the index of the number 6 in the numbers array.
+A função retorna 4, que é o índice do número 6 no array de números.
 
-Linear search is a straightforward algorithm, which scans through each element of an array until finding a match. However, it poses efficiency concerns, particularly with large datasets. As the size of the dataset grows, the time taken for the search increases proportionally.
+A busca linear é como quando você olha cada carta em um baralho até encontrar a carta que está procurando. Porém, se o
+baralho for muito grande, pode demorar bastante. Quanto mais cartas tiver, mais tempo leva para encontrar a carta certa.
+Outros métodos de busca podem ser mais rápidos, mas a busca linear ainda é importante para entender como os outros
+funcionam.
 
-This inefficiency becomes more pronounced compared to other search algorithms. Despite its simplicity and ease of implementation, its practicality diminishes when dealing with substantial amounts of data. Nonetheless, linear search remains foundational in computer science and aids in grasping more intricate search algorithms.
-
-### Visual example
+### Exemplo visual
 
 <LinearArraySearch array={[10, 5, 8, 2, 6, 3]} element={6} />
 
-### Other methods of linear search
+### Outros métodos para a busca linear
 
-#### Using `findIndex` Method:
+#### Usando o método `findIndex`:
 
-The [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex) method in TypeScript's array prototype searches for an element that satisfies the provided testing function. Here's how you can utilize findIndex:
+O método [findIndex](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/findIndex)
+procura por um elemento no array que satisfaça a função de teste fornecida. Veja como você pode usar o findIndex:
 
 ```typescript
 function linearSearchFindIndex (arr: number[], target: number): number {
@@ -58,14 +60,14 @@ function linearSearchFindIndex (arr: number[], target: number): number {
 }
 ```
 
-Is it possible to use other methods like [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
-or [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), but findIndex is the most efficient
-for this case because it stops when it finds the first occurrence, and because it already searches for the index, which is often expected
-by a linear search algorithm.
+É possível usar outros métodos como [find](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find)
+ou [for...of](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of), mas o findIndex é
+o mais eficiente para este caso porque ele para quando encontra a primeira ocorrência e porque já busca pelo índice,
+que é geralmente o resultado esperado por um algoritmo de busca linear.
 
-### Use cases
+### Casos de uso
 
-Linear search is commonly used in scenarios where you need to find a specific element within an array or a collection of elements. Here are some typical use cases:
+A busca linear é comumente usada em cenários onde você precisa encontrar um elemento específico dentro de um array ou uma coleção de elementos. Aqui estão alguns casos de uso típicos:
 
-1. **Small Arrays**: Linear search is effective for small arrays where the overhead of implementing more complex search algorithms like binary search would outweigh the benefits.
-2. **Unordered Arrays**: When the array is not sorted, linear search remains a straightforward choice. Sorting the array before performing a search could introduce unnecessary complexity and overhead, making linear search a more practical option.
+1. **Arrays Pequenos**: A busca linear é eficaz para arrays pequenos onde o custo adicional de implementar algoritmos de busca mais complexos, como a busca binária, seria maior do que os benefícios.
+2. **Arrays Não Ordenados**: Quando o array não está ordenado, a busca linear continua sendo uma escolha direta. Ordenar o array antes de realizar uma busca poderia introduzir complexidade e gastos de performance desnecessários, tornando a busca linear uma opção mais prática.

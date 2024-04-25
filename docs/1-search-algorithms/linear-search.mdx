@@ -16,7 +16,7 @@ To comprehend linear search in TypeScript, let's consider a basic example. Suppo
 const numbers: number[] = [10, 5, 8, 2, 6, 3]
 ```
 
-Now, let's say we want to find the index of a specific number, let's say 6. We would write a linear search function like this:
+Now, let's say we want to find the index of a specific number in this array, for example 6. We would write a linear search function like this:
 
 ```typescript
 function linearSearch (arr: number[], target: number): number {
@@ -38,9 +38,9 @@ console.log("Index of 6:", targetIndex) // Output: Index of 6: 4
 
 The function returns 4, which is the index of the number 6 in the numbers array.
 
-Linear search is a straightforward algorithm, which scans through each element of an array until finding a match. However, it poses efficiency concerns, particularly with large datasets. As the size of the dataset grows, the time taken for the search increases proportionally.
-
-This inefficiency becomes more pronounced compared to other search algorithms. Despite its simplicity and ease of implementation, its practicality diminishes when dealing with substantial amounts of data. Nonetheless, linear search remains foundational in computer science and aids in grasping more intricate search algorithms.
+Linear search is like when you look at each card in a deck until you find the card you're looking for. However, if the
+deck is very large, it can take a while. The more cards there are, the longer it takes to find the right card. Other
+search methods may be faster, but linear search is still important for understanding how the others work.
 
 ### Visual example
 

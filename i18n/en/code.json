@@ -312,5 +312,29 @@
   },
   "homepage.subtitle": {
     "message": "Become a expert at data structure and algorithms."
+  },
+  "algorithm.actions.next": {
+    "message": "Next"
+  },
+  "algorithm.linearArraySearch.isItEqual_1": {
+    "message": "Is it "
+  },
+  "algorithm.linearArraySearch.isItEqual_2": {
+    "message": " equal to "
+  },
+  "algorithm.linearArraySearch.match": {
+    "message": "Yes! Return the index of this position "
+  },
+  "algorithm.linearArraySearch.notMatch": {
+    "message": "No, go to the next element."
+  },
+  "algorithm.actions.startDescription": {
+    "message": "Click on next to start the algorithm."
+  },
+  "algorithm.actions.stepLogicDescription": {
+    "message": "The logic for each step will be displayed here."
+  },
+  "algorithm.actions.previous": {
+    "message": "Previous"
   }
 }

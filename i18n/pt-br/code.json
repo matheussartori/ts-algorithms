@@ -312,5 +312,29 @@
   },
   "homepage.subtitle": {
     "message": "Torne-se um especialista em estrutura de dados e algoritmos."
+  },
+  "algorithm.actions.next": {
+    "message": "Próximo"
+  },
+  "algorithm.linearArraySearch.isItEqual_1": {
+    "message": ""
+  },
+  "algorithm.linearArraySearch.isItEqual_2": {
+    "message": " é igual a "
+  },
+  "algorithm.linearArraySearch.match": {
+    "message": "Sim! Retorne o índice desta posição "
+  },
+  "algorithm.linearArraySearch.notMatch": {
+    "message": "Não, vá para o próximo elemento."
+  },
+  "algorithm.actions.startDescription": {
+    "message": "Clique em próximo para começar o algoritmo."
+  },
+  "algorithm.actions.stepLogicDescription": {
+    "message": "A lógica para cada etapa vai ser mostrada aqui."
+  },
+  "algorithm.actions.previous": {
+    "message": "Anterior"
   }
 }

@@ -1,42 +1,55 @@
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Translate from '@docusaurus/Translate';
 
 type FeatureItem = {
-  title: string;
+  title: JSX.Element;
   Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Algorithm Exploration',
+    title: (
+      <Translate id="homepage.algorithmExploration.title">
+        Algorithm Exploration
+      </Translate>
+    ),
     Svg: require('@site/static/img/undraw_programmer_re_owql.svg').default,
     description: (
-      <>
+      <Translate id="homepage.algorithmExploration.description">
         Dive into practical examples, exercises, and theory to understand algorithms.
         Perfect for acing technical interviews.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'Practical Examples',
+    title: (
+      <Translate id="homepage.practicalExamples.title">
+        Practical Examples
+      </Translate>
+    ),
     Svg: require('@site/static/img/undraw_solution_mindset_re_57bf.svg').default,
     description: (
-      <>
+      <Translate id="homepage.practicalExamples.description">
         Explore real-world examples, allowing you to focus on understanding
         the core concepts without worrying about setup or boilerplate code.
-      </>
+      </Translate>
     ),
   },
   {
-    title: 'TypeScript Integration',
+    title: (
+      <Translate id="homepage.typescriptIntegration.title">
+        TypeScript Integration
+      </Translate>
+    ),
     Svg: require('@site/static/img/undraw_developer_activity_re_39tg.svg').default,
     description: (
-      <>
+      <Translate id="homepage.typescriptIntegration.description">
         Seamlessly integrate TypeScript into your algorithm studies. Extend or
         customize your learning experience with the flexibility of TypeScript.
-      </>
+      </Translate>
     ),
   },
 ];

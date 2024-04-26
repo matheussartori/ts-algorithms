@@ -288,5 +288,29 @@
   },
   "homepage.startLearningNow": {
     "message": "Comece a estudar agora"
+  },
+  "homepage.algorithmExploration.description": {
+    "message": "Explore exemplos práticos, exercícios e teoria para entender algoritmos. Perfeito para se destacar em entrevistas técnicas."
+  },
+  "homepage.practicalExamples.description": {
+    "message": "Exemplos do mundo real, permitindo que você se concentre em entender os conceitos principais sem se preocupar com configuração ou código básico."
+  },
+  "homepage.typescriptIntegration.description": {
+    "message": "Integre o TypeScript aos seus estudos de algoritmos. Estenda ou personalize sua experiência de aprendizado com a flexibilidade do TypeScript."
+  },
+  "homepage.algorithmExploration.title": {
+    "message": "Exploração de Algoritmos"
+  },
+  "homepage.practicalExamples.title": {
+    "message": "Exemplos Práticos"
+  },
+  "homepage.typescriptIntegration.title": {
+    "message": "Integração com TypeScript"
+  },
+  "homepage.title": {
+    "message": "Algoritmos com TypeScript"
+  },
+  "homepage.subtitle": {
+    "message": "Torne-se um especialista em estrutura de dados e algoritmos."
   }
 }

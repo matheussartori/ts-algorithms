@@ -288,5 +288,29 @@
   },
   "homepage.startLearningNow": {
     "message": "Start learning now"
+  },
+  "homepage.algorithmExploration.description": {
+    "message": "Dive into practical examples, exercises, and theory to understand algorithms. Perfect for acing technical interviews."
+  },
+  "homepage.practicalExamples.description": {
+    "message": "Explore real-world examples, allowing you to focus on understanding the core concepts without worrying about setup or boilerplate code."
+  },
+  "homepage.typescriptIntegration.description": {
+    "message": "Seamlessly integrate TypeScript into your algorithm studies. Extend or customize your learning experience with the flexibility of TypeScript."
+  },
+  "homepage.algorithmExploration.title": {
+    "message": "Algorithm Exploration"
+  },
+  "homepage.practicalExamples.title": {
+    "message": "Practical Examples"
+  },
+  "homepage.typescriptIntegration.title": {
+    "message": "TypeScript Integration"
+  },
+  "homepage.title": {
+    "message": "Typescript Algorithms"
+  },
+  "homepage.subtitle": {
+    "message": "Become a expert at data structure and algorithms."
   }
 }

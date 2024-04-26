@@ -16,7 +16,7 @@ To comprehend linear search in TypeScript, let's consider a basic example. Suppo
 const numbers: number[] = [10, 5, 8, 2, 6, 3]
 ```
 
-Now, let's say we want to find the index of a specific number, let's say 6. We would write a linear search function like this:
+Now, let's say we want to find the index of a specific number in this array, for example 6. We would write a linear search function like this:
 
 ```typescript
 function linearSearch (arr: number[], target: number): number {
@@ -38,9 +38,9 @@ console.log("Index of 6:", targetIndex) // Output: Index of 6: 4
 
 The function returns 4, which is the index of the number 6 in the numbers array.
 
-Linear search is a straightforward algorithm, which scans through each element of an array until finding a match. However, it poses efficiency concerns, particularly with large datasets. As the size of the dataset grows, the time taken for the search increases proportionally.
-
-This inefficiency becomes more pronounced compared to other search algorithms. Despite its simplicity and ease of implementation, its practicality diminishes when dealing with substantial amounts of data. Nonetheless, linear search remains foundational in computer science and aids in grasping more intricate search algorithms.
+Linear search is like when you look at each card in a deck until you find the card you're looking for. However, if the
+deck is very large, it can take a while. The more cards there are, the longer it takes to find the right card. Other
+search methods may be faster, but linear search is still important for understanding how the others work.
 
 ### Visual example
 
@@ -67,5 +67,5 @@ by a linear search algorithm.
 
 Linear search is commonly used in scenarios where you need to find a specific element within an array or a collection of elements. Here are some typical use cases:
 
-1. **Small Arrays**: Linear search is effective for small arrays where the overhead of implementing more complex search algorithms like binary search would outweigh the benefits.
-2. **Unordered Arrays**: When the array is not sorted, linear search remains a straightforward choice. Sorting the array before performing a search could introduce unnecessary complexity and overhead, making linear search a more practical option.
+1. **Small arrays**: Linear search is effective for small arrays where the overhead of implementing more complex search algorithms like binary search would outweigh the benefits.
+2. **Unordered arrays**: When the array is not sorted, linear search remains a straightforward choice. Sorting the array before performing a search could introduce unnecessary complexity and overhead, making linear search a more practical option.

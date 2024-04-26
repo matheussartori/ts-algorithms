@@ -98,4 +98,4 @@ Next, install the [Code Runner](https://marketplace.visualstudio.com/items?itemN
 - `tsc` is the TypeScript compiler. It compiles TypeScript code to JavaScript code. If you run in your terminal `tsc hello.ts`, it will generate a `hello.js` file.
 - `tsx` is a TypeScript runner. It compiles and runs TypeScript code. If you run in your terminal `tsx hello.ts`, it will compile and run the `hello.ts` file, without generating a `hello.js` file.
 - `npm` is the Node.js package manager. It is used to install and manage packages. It comes with Node.js, so you don't need to install it separately.
-- `npx` is a package runner tool that comes with npm 5.2+. It is used to execute packages without installing them globally. You will use it to run installed packages in your project's `node_modules` directory.
+- `npx` is a package runner tool that comes with npm. It is used to execute packages without installing them globally. You will use it to run installed packages in your project's `node_modules` directory.

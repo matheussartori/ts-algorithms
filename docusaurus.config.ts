@@ -26,7 +26,8 @@ const config: Config = {
   // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
-    locales: ['en'],
+    locales: ['en', 'pt-br'],
+    path: 'i18n',
   },
 
   presets: [
@@ -73,6 +74,10 @@ const config: Config = {
         {
           href: 'https://github.com/matheussartori/ts-algorithms-docs',
           label: 'GitHub',
+          position: 'right',
+        },
+        {
+          type: 'localeDropdown',
           position: 'right',
         },
       ],

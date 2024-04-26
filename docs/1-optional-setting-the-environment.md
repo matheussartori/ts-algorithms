@@ -6,13 +6,14 @@ sidebar_position: 2
 
 :::warning
 
-You don't need to set up the environment on your computer to follow this guide; use this page only if your personal preference is to run the code locally on your computer. The exercises can be executed directly from the browser.
+You don't need to set up the environment on your computer to follow this guide; use this page only if your personal
+preference is to run the code locally on your computer. The exercises can be executed directly from the browser.
 
 :::
 
-If you're new to TypeScript, don't worry! We'll provide explanations and examples every step of the way to help you understand the fundamentals.
-
-If you're already familiar with TypeScript, you can skip this getting started and jump straight to the content.
+If you're new to TypeScript, don't worry! We'll provide explanations and examples every step of the way to help you
+understand the fundamentals. If you're already familiar with TypeScript, you can skip this getting started and jump
+straight to the content.
 
 ### What you'll need
 

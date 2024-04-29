@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Box } from '@site/src/algorithms/ui/box/box'
+import Translate from '@docusaurus/Translate'
 
 interface LinearArraySearchProps {
   array: number[]
@@ -35,23 +36,55 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
         ))}
       </div>
       <div style={{ display: 'flex', gap: '.75rem', marginTop: '.75rem', marginBottom: '.75rem' }}>
-        <button className="button button--secondary" onClick={handlePrevious} disabled={currentIndex === -1}>Previous</button>
-        <button className="button button--secondary" onClick={handleNext}>Next</button>
+        <button className="button button--secondary" onClick={handlePrevious} disabled={currentIndex === -1}>
+          <Translate id="algorithm.actions.previous">
+            Previous
+          </Translate>
+        </button>
+        <button className="button button--secondary" onClick={handleNext}>
+          <Translate id="algorithm.actions.next">
+            Next
+          </Translate>
+        </button>
       </div>
       <div>
         {currentIndex > -1 ? (
           <>
-            <p>Is it {array[currentIndex]} equal to {element}?</p>
+            <p>
+              <Translate id="algorithm.linearArraySearch.isItEqual_1">
+                Is it
+              </Translate>
+              {array[currentIndex]}
+              <Translate id="algorithm.linearArraySearch.isItEqual_2">
+                equal to
+              </Translate>
+              {element}?</p>
             {array[currentIndex] === element ? (
-            <p>Yes! Return the index of this position ({currentIndex}).</p>
+            <p>
+              <Translate id="algorithm.linearArraySearch.match">
+                Yes! Return the index of this position
+              </Translate>
+              ({currentIndex}).</p>
             ) : (
-            <p>No, go to the next element.</p>
+            <p>
+              <Translate id="algorithm.linearArraySearch.notMatch">
+                No, go to the next element.
+              </Translate>
+            </p>
             )}
           </>
         ) : (
           <>
-            <p>Click on next to start the algorithm.</p>
-            <p>The logic for each step will be displayed here.</p>
+            <p>
+              <Translate id="algorithm.actions.startDescription">
+                Click on next to start the algorithm.
+              </Translate>
+            </p>
+            <p>
+              <Translate id="algorithm.actions.stepLogicDescription">
+                The logic for each step will be displayed here.
+              </Translate>
+            </p>
           </>
         )}
       </div>

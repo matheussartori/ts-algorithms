@@ -11,3 +11,10 @@ Additionally, you can run the code directly from your browser, eliminating the n
 computer.
 
 For instructions on running TypeScript code in your text editor locally, head to the next page.
+
+:::caution
+
+If you choose to run the code directly in your browser for the exercises, be careful not to create an infinite loop.
+The code runs directly from your browser, so if you create an infinite loop, your browser may crash.
+
+:::

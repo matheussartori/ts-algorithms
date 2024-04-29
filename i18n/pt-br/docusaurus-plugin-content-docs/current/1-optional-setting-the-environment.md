@@ -12,9 +12,9 @@ do navegador.
 
 :::
 
-Se você é novo no TypeScript, não se preocupe! Vamos fornecer explicações e exemplos a cada passo do caminho para ajudá-lo a entender os fundamentos.
-
-Se você já está familiarizado com TypeScript, recomendo ir direto para a próxima página.
+Se você é novo no TypeScript, não se preocupe! Vamos trazer explicações e exemplos a cada passo do caminho para
+ajudá-lo a entender os fundamentos. Se você já está familiarizado com TypeScript, recomendamos ir direto para a próxima
+página.
 
 ### O que você vai precisar
 
@@ -29,7 +29,9 @@ Se você já está familiarizado com TypeScript, recomendo ir direto para a pró
 
 :::info
 
-Você pode optar por instalar um gerenciador de versões para o Node.js, como o [nvm](https://github.com/nvm-sh/nvm) ou [nvm-windows](https://github.com/coreybutler/nvm-windows). Essas ferramentas permitem alternar facilmente entre diferentes versões do Node.js, sendo muito úteis ao trabalhar em vários projetos com diferentes versões do Node.js.
+Você pode optar por instalar um gerenciador de versões para o Node.js, como o [nvm](https://github.com/nvm-sh/nvm) ou
+[nvm-windows](https://github.com/coreybutler/nvm-windows). Essas ferramentas permitem alternar facilmente entre
+diferentes versões do Node.js, sendo muito úteis ao trabalhar em vários projetos com diferentes versões do Node.js.
 
 :::
 
@@ -94,7 +96,7 @@ npm i -g ts-node
 ```
 
 Em seguida, instale a extensão [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) no VSCode. Depois de instalada, você pode executar seu código clicando com o botão direito do mouse no editor e selecionando "Run Code", ou pressionando Ctrl + Alt + N, ou clicando no ícone de execução no canto superior direito.
-1
+
 ### O que é tsc, tsx, npm e npx?
 
 - `tsc` é o compilador TypeScript. Ele compila código TypeScript para código JavaScript. Se você executar no seu terminal `tsc hello.ts`, ele irá gerar um arquivo `hello.js`.

@@ -312,5 +312,44 @@
   },
   "homepage.subtitle": {
     "message": "Become a expert at data structure and algorithms."
+  },
+  "algorithm.actions.next": {
+    "message": "Next"
+  },
+  "algorithm.linearArraySearch.isItEqual_1": {
+    "message": "Is it "
+  },
+  "algorithm.linearArraySearch.isItEqual_2": {
+    "message": " equal to "
+  },
+  "algorithm.linearArraySearch.match": {
+    "message": "Yes! Return the index of this position "
+  },
+  "algorithm.linearArraySearch.notMatch": {
+    "message": "No, go to the next element."
+  },
+  "algorithm.actions.startDescription": {
+    "message": "Click on next to start the algorithm."
+  },
+  "algorithm.actions.stepLogicDescription": {
+    "message": "The logic for each step will be displayed here."
+  },
+  "algorithm.actions.previous": {
+    "message": "Previous"
+  },
+  "editor.sucess.text": {
+    "message": "Your code works for the sample test case."
+  },
+  "editor.error.text": {
+    "message": "Your code did not match the expected output for the sample test case."
+  },
+  "editor.pending.text": {
+    "message": "Finish the function above and click on `Run code` to check if your algorithm is correct."
+  },
+  "editor.runCode.text": {
+    "message": "Run code"
+  },
+  "admonition.success.text": {
+    "message": "SUCCESS"
   }
 }

@@ -26,13 +26,15 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
     <div>
       <div style={{ display: 'flex' }}>
         {array.map((value, index) => (
-          <Box
-            key={index}
-            isActive={currentIndex === index && array[currentIndex] === element}
-            isCurrent={currentIndex === index}
-          >
-            {value}
-          </Box>
+          <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <p style={{ marginBottom: 0 }}>{index}</p>
+            <Box
+              isActive={currentIndex === index && array[currentIndex] === element}
+              isCurrent={currentIndex === index}
+            >
+              {value}
+            </Box>
+          </div>
         ))}
       </div>
       <div style={{ display: 'flex', gap: '.75rem', marginTop: '.75rem', marginBottom: '.75rem' }}>
@@ -41,7 +43,7 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
             Previous
           </Translate>
         </button>
-        <button className="button button--secondary" onClick={handleNext}>
+        <button className="button button--secondary" onClick={handleNext} disabled={currentIndex === array.length - 1 || array[currentIndex] === element}>
           <Translate id="algorithm.actions.next">
             Next
           </Translate>

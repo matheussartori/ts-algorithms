@@ -353,6 +353,6 @@
     "message": "SUCCESS"
   },
   "algorithm.linearArraySearch.endOfArray": {
-    "message": "End of the array reached, return -1."
+    "message": "No, end of the array reached, return -1."
   }
 }

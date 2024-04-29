@@ -10,16 +10,24 @@ interface LinearArraySearchProps {
 export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
   const [currentIndex, setCurrentIndex] = useState(-1)
 
-  const handleNext = () => {
+  function handleNext () {
     if (currentIndex < array.length - 1 && array[currentIndex] !== element) {
       setCurrentIndex(currentIndex + 1)
     }
   }
 
-  const handlePrevious = () => {
+  function handlePrevious () {
     if (currentIndex > -1) {
       setCurrentIndex(currentIndex - 1)
     }
+  }
+
+  function isBoxActive (boxIndex: number) {
+    return currentIndex === boxIndex && array[currentIndex] === element
+  }
+
+  function isBoxCurrent (boxIndex: number) {
+    return currentIndex === boxIndex
   }
 
   return (
@@ -29,8 +37,8 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
           <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p style={{ marginBottom: 0 }}>{index}</p>
             <Box
-              isActive={currentIndex === index && array[currentIndex] === element}
-              isCurrent={currentIndex === index}
+              isActive={isBoxActive(index)}
+              isCurrent={isBoxCurrent(index)}
             >
               {value}
             </Box>
@@ -70,7 +78,7 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
             ) : currentIndex === array.length - 1 ? (
               <p>
                 <Translate id="algorithm.linearArraySearch.endOfArray">
-                  End of the array reached, return -1.
+                  No, end of the array reached, return -1.
                 </Translate>
               </p>
             ) : (

@@ -38,7 +38,7 @@ const numbers: number[] = [2, 3, 5, 6, 8, 10]
 Now, let's say we want to find the index of the number 6 using binary search:
 
 ```typescript
-function binarySearch (array: number[], target: number) {
+function binarySearch (array: number[], target: number): number {
   if (array.length === 0) return -1 // Return -1 if the array is empty
 
   let low = 0 // Initialize the low pointer to the beginning of the array

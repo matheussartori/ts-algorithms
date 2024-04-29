@@ -353,6 +353,6 @@
     "message": "SUCESSO"
   },
   "algorithm.linearArraySearch.endOfArray": {
-    "message": "Fim do array, retorna -1."
+    "message": "Não, fim do array, retorna -1."
   }
 }

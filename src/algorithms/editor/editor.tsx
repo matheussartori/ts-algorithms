@@ -2,9 +2,8 @@ import MonacoEditor from '@monaco-editor/react'
 import { useColorMode } from '@docusaurus/theme-common'
 import { useState } from 'react'
 import { transpile } from 'typescript'
-import SucessMDX from './success.mdx'
-import ErrorMDX from './error.mdx'
-import PendingMDX from './pending.mdx'
+import Admonition from '@theme/Admonition'
+import Translate, { translate } from '@docusaurus/Translate'
 
 interface EditorProps {
   initialCode?: string
@@ -55,7 +54,11 @@ export function Editor({ initialCode, expectedResult, args, returnValue, editorH
   return (
     <>
       <div style={{ display: 'flex', gap: '.5rem', marginBottom: '1rem' }}>
-        <button className="button button--primary" onClick={executeCode}>Run code</button>
+        <button className="button button--primary" onClick={executeCode}>
+          <Translate id="editor.runCode.text">
+            Run code
+          </Translate>
+        </button>
       </div>
       <MonacoEditor
         height={editorHeight}
@@ -70,11 +73,23 @@ export function Editor({ initialCode, expectedResult, args, returnValue, editorH
       />
       <div style={{ marginTop: '1rem' }}>
       {output !== "" && expectedResult == output ? (
-        <SucessMDX />
+        <Admonition type="success" title={translate({ message: 'admonition.success.text'} )}>
+          <Translate id="editor.sucess.text">
+            Your code works for the sample test case.
+          </Translate>
+        </Admonition>
       ) : output !== "" && expectedResult != output ? (
-        <ErrorMDX />
+        <Admonition type="warning">
+          <Translate id="editor.error.text">
+            Your code did not match the expected output for the sample test case.
+          </Translate>
+        </Admonition>
       ) : (
-        <PendingMDX />
+        <Admonition type="note">
+          <Translate id="editor.pending.text">
+            Finish the function above and click on `Run code` to check if your algorithm is correct.
+          </Translate>
+        </Admonition>
       )}
       </div>
     </>

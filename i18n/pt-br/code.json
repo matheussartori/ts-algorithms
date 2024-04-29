@@ -336,5 +336,20 @@
   },
   "algorithm.actions.previous": {
     "message": "Anterior"
+  },
+  "editor.sucess.text": {
+    "message": "Seu código passou no resultado para o exercício."
+  },
+  "editor.error.text": {
+    "message": "A saída do seu código não é a mesma do resultado para o exercício."
+  },
+  "editor.pending.text": {
+    "message": "Termine a função acima e clique no botão `Rodar código` para verificar se seu algoritmo está correto."
+  },
+  "editor.runCode.text": {
+    "message": "Rodar código"
+  },
+  "admonition.success.text": {
+    "message": "SUCESSO"
   }
 }

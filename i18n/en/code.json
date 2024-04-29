@@ -336,5 +336,20 @@
   },
   "algorithm.actions.previous": {
     "message": "Previous"
+  },
+  "editor.sucess.text": {
+    "message": "Your code works for the sample test case."
+  },
+  "editor.error.text": {
+    "message": "Your code did not match the expected output for the sample test case."
+  },
+  "editor.pending.text": {
+    "message": "Finish the function above and click on `Run code` to check if your algorithm is correct."
+  },
+  "editor.runCode.text": {
+    "message": "Run code"
+  },
+  "admonition.success.text": {
+    "message": "SUCCESS"
   }
 }

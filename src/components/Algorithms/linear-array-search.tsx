@@ -10,25 +10,23 @@ interface LinearArraySearchProps {
 export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
   const [currentIndex, setCurrentIndex] = useState(-1)
 
-  function handleNext () {
+  const handleNext = () => {
     if (currentIndex < array.length - 1 && array[currentIndex] !== element) {
       setCurrentIndex(currentIndex + 1)
     }
   }
 
-  function handlePrevious () {
+  const handlePrevious = () => {
     if (currentIndex > -1) {
       setCurrentIndex(currentIndex - 1)
     }
   }
 
-  function isBoxActive (boxIndex: number) {
-    return currentIndex === boxIndex && array[currentIndex] === element
-  }
+  const isBoxActive = (boxIndex: number) => currentIndex === boxIndex && array[currentIndex] === element
+  const isBoxCurrent = (boxIndex: number) => currentIndex === boxIndex
 
-  function isBoxCurrent (boxIndex: number) {
-    return currentIndex === boxIndex
-  }
+  const isNextButtonDisabled = () => currentIndex === array.length - 1 || array[currentIndex] === element
+  const isPreviousButtonDisabled = () => currentIndex === -1
 
   return (
     <div>
@@ -46,12 +44,12 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
         ))}
       </div>
       <div style={{ display: 'flex', gap: '.75rem', marginTop: '.75rem', marginBottom: '.75rem' }}>
-        <button className="button button--secondary" onClick={handlePrevious} disabled={currentIndex === -1}>
+        <button className="button button--secondary" onClick={handlePrevious} disabled={isPreviousButtonDisabled()}>
           <Translate id="algorithm.actions.previous">
             Previous
           </Translate>
         </button>
-        <button className="button button--secondary" onClick={handleNext} disabled={currentIndex === array.length - 1 || array[currentIndex] === element}>
+        <button className="button button--secondary" onClick={handleNext} disabled={isNextButtonDisabled()}>
           <Translate id="algorithm.actions.next">
             Next
           </Translate>

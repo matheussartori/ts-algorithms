@@ -351,5 +351,8 @@
   },
   "admonition.success.text": {
     "message": "SUCCESS"
+  },
+  "algorithm.linearArraySearch.endOfArray": {
+    "message": "End of the array reached, return -1."
   }
 }

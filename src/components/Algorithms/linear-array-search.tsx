@@ -67,13 +67,19 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
                 Yes! Return the index of this position
               </Translate>
               ({currentIndex}).</p>
+            ) : currentIndex === array.length - 1 ? (
+              <p>
+                <Translate id="algorithm.linearArraySearch.endOfArray">
+                  End of the array reached, return -1.
+                </Translate>
+              </p>
             ) : (
-            <p>
-              <Translate id="algorithm.linearArraySearch.notMatch">
-                No, go to the next element.
-              </Translate>
-            </p>
-            )}
+              <p>
+                <Translate id="algorithm.linearArraySearch.notMatch">
+                  No, go to the next element.
+                </Translate>
+              </p>
+              ) }
           </>
         ) : (
           <>

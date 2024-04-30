@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box } from '@site/src/algorithms/ui/box/box'
 import Translate from '@docusaurus/Translate'
 import styles from '../styles.module.css'
@@ -9,18 +9,45 @@ interface BinaryArraySearchProps {
 }
 
 export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
-  const [low, setLow] = useState(array[0])
-  const [high, setHigh] = useState(array[array.length - 1])
+  const [low, setLow] = useState(0)
+  const [high, setHigh] = useState(array.length - 1)
 
-  const mid = Math.floor(low + high / 2)
+  const [mid, setMid] = useState(-1)
+  const [returnValue, setReturnValue] = useState<null | number>(null)
 
   const handleNext = () => {
-
+    if (low <= high) {
+      if (array[mid] > element) {
+        setHigh(mid - 1)
+      } else {
+        setLow(mid + 1)
+      }
+    } else {
+      setReturnValue(-1)
+    }
   }
+
+  useEffect(() => {
+    if (low <= high) {
+      setMid(Math.floor((low + high) / 2))
+    }
+  }, [low, high])
+
+  useEffect(() => {
+    if (element === array[mid]) {
+      setReturnValue(mid)
+    }
+  }, [mid, element])
+
+  useEffect(() => {
+    console.log({ low, high, mid, returnValue })
+  }, [low, high, mid, returnValue])
 
   const handlePrevious = () => {
 
   }
+
+  const isNextButtonDisabled = returnValue !== null
 
   return (
     <div>
@@ -28,7 +55,7 @@ export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
         {array.map((value, index) => (
           <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p style={{ marginBottom: 0 }}>{index}</p>
-            <Box>
+            <Box isCurrent={index === mid}>
               {value}
             </Box>
           </div>
@@ -40,7 +67,7 @@ export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
             Previous
           </Translate>
         </button>
-        <button className="button button--secondary" onClick={handleNext}>
+        <button className="button button--secondary" onClick={handleNext} disabled={isNextButtonDisabled}>
           <Translate id="algorithm.actions.next">
             Next
           </Translate>

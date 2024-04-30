@@ -121,8 +121,8 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
       <h3>Debugger</h3>
         <Debugger>
           <p>--------------------------</p>
-          {currentVersion && <p>low: {currentVersion.low}</p>}
-          {currentVersion && <p>high: {currentVersion.high}</p>}
+          {currentVersion && <p>low: {versions.length === 1 ? currentVersion.low : versions[versions.length - 2].low}</p>}
+          {currentVersion && <p>high: {versions.length === 1 ? currentVersion.high : versions[versions.length - 2].high}</p>}
           {currentVersion && currentVersion.mid > -1 ? <p>mid: {currentVersion.mid}</p> : <p>mid: null</p>}
           {currentVersion && <p>return value: {currentVersion.returnValue ?? 'null'}</p>}
           <p>--------------------------</p>

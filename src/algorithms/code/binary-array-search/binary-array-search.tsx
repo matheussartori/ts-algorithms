@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Box } from '@site/src/algorithms/ui/box/box'
 import Translate from '@docusaurus/Translate'
 import styles from '../styles.module.css'
@@ -28,6 +28,10 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
     }
   ])
 
+  useEffect(() => {
+    console.log(versions)
+  }, [versions])
+
   const currentVersion = versions[versions.length - 1]
 
   const handleNext = () => {
@@ -48,7 +52,7 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
           returnValue: mid,
           eliminatedIndexes
         }
-        setVersions([...versions, newVersion])
+        setVersions(prevVersions => [...prevVersions, newVersion])
       } else if (array[mid] > element) {
         const newVersion: Version = {
           ...currentVersion,
@@ -56,7 +60,7 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
           mid: Math.floor((currentVersion.low + currentVersion.high) / 2),
           eliminatedIndexes
         }
-        setVersions([...versions, newVersion])
+        setVersions(prevVersions => [...prevVersions, newVersion])
       } else {
         const newVersion: Version = {
           ...currentVersion,
@@ -64,14 +68,14 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
           mid: Math.floor((currentVersion.low + currentVersion.high) / 2),
           eliminatedIndexes
         }
-        setVersions([...versions, newVersion])
+        setVersions(prevVersions => [...prevVersions, newVersion])
       }
     } else {
       const newVersion: Version = {
         ...currentVersion,
         returnValue: -1,
       }
-      setVersions([...versions, newVersion])
+      setVersions(prevVersions => [...prevVersions, newVersion])
     }
   }
 

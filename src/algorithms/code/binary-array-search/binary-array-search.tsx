@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Box } from '@site/src/algorithms/ui/box/box'
 import Translate from '@docusaurus/Translate'
+import styles from '../styles.module.css'
 
 interface BinaryArraySearchProps {
   array: number[]
@@ -8,9 +9,10 @@ interface BinaryArraySearchProps {
 }
 
 export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
-  const [mid, setMid] = useState(-1)
   const [low, setLow] = useState(array[0])
   const [high, setHigh] = useState(array[array.length - 1])
+
+  const mid = Math.floor(low + high / 2)
 
   const handleNext = () => {
 
@@ -22,7 +24,7 @@ export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
 
   return (
     <div>
-      <div style={{ display: 'flex' }}>
+      <div className={styles.boxContainer}>
         {array.map((value, index) => (
           <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p style={{ marginBottom: 0 }}>{index}</p>

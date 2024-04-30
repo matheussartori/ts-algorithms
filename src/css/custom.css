@@ -9,6 +9,7 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 
   --ifm-color-success: #2e7d32;
+  --ifm-color-disabled: #c4c4c4;
 }
 
 [data-theme='dark'] {
@@ -22,4 +23,5 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   --ifm-color-success: #388e3c;
+  --ifm-color-disabled: #474747;
 }

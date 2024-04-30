@@ -6,14 +6,16 @@ interface BoxProps extends HTMLAttributes<HTMLDivElement> {
   children?: ReactNode
   isCurrent?: boolean
   isActive?: boolean
+  isDisabled?: boolean
 }
 
-export function Box({ children, isCurrent, isActive }: BoxProps) {
+export function Box({ children, isCurrent, isActive, isDisabled }: BoxProps) {
   const boxClassNames = clsx(
     styles.container,
     {
       [styles.active]: isActive,
-      [styles.current]: isCurrent
+      [styles.current]: isCurrent,
+      [styles.disabled]: isDisabled
     }
   )
 

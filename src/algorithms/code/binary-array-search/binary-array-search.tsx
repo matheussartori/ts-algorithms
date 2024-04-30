@@ -15,6 +15,13 @@ export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
   const [mid, setMid] = useState(-1)
   const [returnValue, setReturnValue] = useState<null | number>(null)
 
+  const eliminatedIndexes: number[] = []
+  for (let i = 0; i < array.length; i++) {
+    if (i < low || i > high) {
+      eliminatedIndexes.push(i)
+    }
+  }
+
   const handleNext = () => {
     if (low <= high) {
       if (array[mid] > element) {
@@ -55,7 +62,7 @@ export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
         {array.map((value, index) => (
           <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p style={{ marginBottom: 0 }}>{index}</p>
-            <Box isCurrent={index === mid}>
+            <Box isCurrent={index === mid} isDisabled={eliminatedIndexes.includes(index)}>
               {value}
             </Box>
           </div>

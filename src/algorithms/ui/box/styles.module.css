@@ -16,3 +16,7 @@
 .active {
   background-color: var(--ifm-color-success);
 }
+
+.disabled {
+  background-color: var(--ifm-color-disabled);
+}

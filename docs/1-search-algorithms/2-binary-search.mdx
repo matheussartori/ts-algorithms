@@ -2,6 +2,8 @@
 sidebar_position: 2
 ---
 
+import { BinaryArraySearch } from '../../src/components/Algorithms/binary-array-search'
+
 # Binary search
 
 ### Introduction
@@ -68,6 +70,18 @@ Let's use this function to find the index of the number 6 in the numbers array:
 const targetIndex = binarySearch(numbers, 6)
 console.log("Index of 6:", targetIndex) // Output: Index of 6: 3
 ```
+
+### Visual Example
+
+#### Element exists in array
+
+<BinaryArraySearch array={[1, 4, 7, 9, 12, 15, 16, 17, 21, 25]} element={12} />
+
+<hr />
+
+#### Element does not exists in array
+
+<BinaryArraySearch array={[2, 4, 5, 7, 9, 10, 13, 18, 22, 31]} element={3} />
 
 ### Advantages of Binary Search
 Binary search offers several advantages over linear search:

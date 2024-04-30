@@ -27,8 +27,8 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
   const isBoxActive = (boxIndex: number) => currentIndex === boxIndex && array[currentIndex] === element
   const isBoxCurrent = (boxIndex: number) => currentIndex === boxIndex
 
-  const isNextButtonDisabled = () => currentIndex === array.length - 1 || array[currentIndex] === element
-  const isPreviousButtonDisabled = () => currentIndex === -1
+  const isNextButtonDisabled = currentIndex === array.length - 1 || array[currentIndex] === element
+  const isPreviousButtonDisabled = currentIndex === -1
 
   return (
     <div style={{ display: 'flex' }}>
@@ -47,12 +47,12 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
           ))}
         </div>
         <div style={{ display: 'flex', gap: '.75rem', marginTop: '.75rem', marginBottom: '.75rem' }}>
-          <button className="button button--secondary" onClick={handlePrevious} disabled={isPreviousButtonDisabled()}>
+          <button className="button button--secondary" onClick={handlePrevious} disabled={isPreviousButtonDisabled}>
             <Translate id="algorithm.actions.previous">
               Previous
             </Translate>
           </button>
-          <button className="button button--secondary" onClick={handleNext} disabled={isNextButtonDisabled()}>
+          <button className="button button--secondary" onClick={handleNext} disabled={isNextButtonDisabled}>
             <Translate id="algorithm.actions.next">
               Next
             </Translate>

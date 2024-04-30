@@ -8,53 +8,80 @@ interface BinaryArraySearchProps {
   element: number
 }
 
-export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
-  const [low, setLow] = useState(0)
-  const [high, setHigh] = useState(array.length - 1)
+interface Version {
+  mid: number
+  low: number
+  high: number
+  returnValue: null | number
+  eliminatedIndexes: number[]
+}
 
-  const [mid, setMid] = useState(-1)
-  const [returnValue, setReturnValue] = useState<null | number>(null)
-
-  const eliminatedIndexes: number[] = []
-  for (let i = 0; i < array.length; i++) {
-    if (i < low || i > high) {
-      eliminatedIndexes.push(i)
+export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
+  const [versions, setVersions] = useState<Version[]>([
+    {
+      mid: -1,
+      low: 0,
+      high: array.length - 1,
+      returnValue: null,
+      eliminatedIndexes: [],
     }
-  }
+  ])
+
+  const currentVersion = versions[versions.length - 1]
 
   const handleNext = () => {
-    if (low <= high) {
-      if (array[mid] > element) {
-        setHigh(mid - 1)
+    if (currentVersion && currentVersion.low <= currentVersion.high) {
+      const mid = Math.floor((currentVersion.low + currentVersion.high) / 2)
+
+      const eliminatedIndexes: number[] = []
+
+      for (let i = 0; i < array.length; i++) {
+        if (i < currentVersion.low || i > currentVersion.high) {
+          eliminatedIndexes.push(i)
+        }
+      }
+      if (array[mid] === element) {
+        const newVersion: Version = {
+          ...currentVersion,
+          mid,
+          returnValue: mid,
+          eliminatedIndexes
+        }
+        setVersions([...versions, newVersion])
+      } else if (array[mid] > element) {
+        const newVersion: Version = {
+          ...currentVersion,
+          high: mid - 1,
+          mid: Math.floor((currentVersion.low + currentVersion.high) / 2),
+          eliminatedIndexes
+        }
+        setVersions([...versions, newVersion])
       } else {
-        setLow(mid + 1)
+        const newVersion: Version = {
+          ...currentVersion,
+          low: mid + 1,
+          mid: Math.floor((currentVersion.low + currentVersion.high) / 2),
+          eliminatedIndexes
+        }
+        setVersions([...versions, newVersion])
       }
     } else {
-      setReturnValue(-1)
+      const newVersion: Version = {
+        ...currentVersion,
+        returnValue: -1,
+      }
+      setVersions([...versions, newVersion])
     }
   }
-
-  useEffect(() => {
-    if (low <= high) {
-      setMid(Math.floor((low + high) / 2))
-    }
-  }, [low, high])
-
-  useEffect(() => {
-    if (element === array[mid]) {
-      setReturnValue(mid)
-    }
-  }, [mid, element])
-
-  useEffect(() => {
-    console.log({ low, high, mid, returnValue })
-  }, [low, high, mid, returnValue])
 
   const handlePrevious = () => {
-
+    if (versions.length > 1) {
+      setVersions(versions.slice(0, -1))
+    }
   }
 
-  const isNextButtonDisabled = returnValue !== null
+  const isNextButtonDisabled = currentVersion && currentVersion.returnValue !== null
+  const isPreviousButtonDisabled = versions.length === 1
 
   return (
     <div>
@@ -62,14 +89,17 @@ export function BinaryArraySearch ({ array, element }: BinaryArraySearchProps) {
         {array.map((value, index) => (
           <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <p style={{ marginBottom: 0 }}>{index}</p>
-            <Box isCurrent={index === mid} isDisabled={eliminatedIndexes.includes(index)}>
+            <Box
+              isCurrent={currentVersion && index === currentVersion.mid}
+              isDisabled={currentVersion && currentVersion.eliminatedIndexes.includes(index)}
+            >
               {value}
             </Box>
           </div>
         ))}
       </div>
       <div style={{ display: 'flex', gap: '.75rem', marginTop: '.75rem', marginBottom: '.75rem' }}>
-        <button className="button button--secondary" onClick={handlePrevious}>
+        <button className="button button--secondary" onClick={handlePrevious} disabled={isPreviousButtonDisabled}>
           <Translate id="algorithm.actions.previous">
             Previous
           </Translate>

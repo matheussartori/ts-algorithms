@@ -89,7 +89,7 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
   const isPreviousButtonDisabled = versions.length === 1
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column' }}>
+    <div style={{ display: 'flex', gap: '1rem' }}>
       <div>
         <div className={styles.boxContainer}>
           {array.map((value, index) => (
@@ -119,12 +119,39 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
           </button>
         </div>
         <div>
-          <p></p>
-          <p></p>
+          <p>
+            {versions.length === 1 ? (
+              <Translate id="algorithm.actions.startDescription">
+                Click on next to start the algorithm.
+              </Translate>
+            ) : (
+              <>
+                <Translate id="">The array item at mid index (</Translate>
+                {currentVersion && array[currentVersion.mid]}
+                <Translate id="">) is it equal to the target </Translate>
+                ({element})?
+              </>
+            )}
+          </p>
+          <p>
+          {versions.length === 1 ? (
+            <Translate id="algorithm.actions.stepLogicDescription">
+              The logic for each step will be displayed here.
+            </Translate>
+          ) : array[currentVersion.mid] > element && !currentVersion.returnValue ? (
+            <>No, it's bigger than the element we're searching, so we will update the `low` variable with `mid` + 1.</>
+          ) : array[currentVersion.mid] < element && !currentVersion.returnValue ? (
+            <>No, it's smaller than the element we're searching.</>
+          ) : array[currentVersion.mid] === element ? (
+            <>Yes</>
+          ) : (
+            <>Not found</>
+          )}
+          </p>
         </div>
       </div>
-      <div>
-      <h3>Debugger</h3>
+      <div style={{ flexGrow: 1 }}>
+        <h3>Debugger</h3>
         <Debugger>
           <p>--------------------------</p>
           {currentVersion && <p>low: {versions.length === 1 ? currentVersion.low : versions[versions.length - 2].low}</p>}

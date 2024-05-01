@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Box } from '@site/src/algorithms/ui/box/box'
 import Translate from '@docusaurus/Translate'
 import styles from '../styles.module.css'
@@ -27,10 +27,6 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
       eliminatedIndexes: [],
     }
   ])
-
-  useEffect(() => {
-    console.log(versions)
-  }, [versions])
 
   const currentVersion = versions[versions.length - 1]
 

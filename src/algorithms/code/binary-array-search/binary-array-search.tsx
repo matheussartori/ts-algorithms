@@ -85,8 +85,8 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
   const isPreviousButtonDisabled = versions.length === 1
 
   return (
-    <div style={{ display: 'flex', gap: '1rem' }}>
-      <div>
+    <div style={{ display: 'flex', gap: '2rem' }}>
+      <div style={{ flexGrow: 1 }}>
         <div className={styles.boxContainer}>
           {array.map((value, index) => (
             <div key={index} className={styles.boxItemsContainer}>
@@ -122,9 +122,9 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
               </Translate>
             ) : (
               <>
-                <Translate id="">The array item at mid index (</Translate>
+                <Translate id="algorithm.binarySearchArray.isItEqual_1">The array item at mid index (</Translate>
                 {currentVersion && array[currentVersion.mid]}
-                <Translate id="">) is it equal to the target </Translate>
+                <Translate id="algorithm.binarySearchArray.isItEqual_2">) is it equal to the target</Translate>
                 ({element})?
               </>
             )}
@@ -135,18 +135,29 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
               The logic for each step will be displayed here.
             </Translate>
           ) : array[currentVersion.mid] > element && !currentVersion.returnValue ? (
-            <>No, it's bigger than the element we're searching, so we will update the `low` variable with `mid` + 1.</>
+            <Translate id="algorithm.binarySearchArray.biggerThan">
+              No, it's bigger than the element we're searching, so we will update the high variable with mid - 1. This
+              step eliminates every position after mid, since the element it's not there.
+            </Translate>
           ) : array[currentVersion.mid] < element && !currentVersion.returnValue ? (
-            <>No, it's smaller than the element we're searching.</>
+            <Translate id="algorithm.binarySearchArray.smallerThan">
+              No, it's smaller than the element we're searching, so we will update the low variable with mid + 1. This
+              step eliminates every position before mid, since the element it's not there.
+            </Translate>
           ) : array[currentVersion.mid] === element ? (
-            <>Yes</>
+            <>
+              <Translate id="algorithm.binarySearchArray.elementFound">Yes, return the mid index </Translate>
+              ({currentVersion.mid}).
+            </>
           ) : (
-            <>Not found</>
+            <Translate id="algorithm.binarySearchArray.elementNotFound">
+              The target number is not in the array. Return -1.
+            </Translate>
           )}
           </p>
         </div>
       </div>
-      <div style={{ flexGrow: 1 }}>
+      <div style={{ width: 256.53 }}>
         <h3>Debugger</h3>
         <Debugger>
           <p>--------------------------</p>

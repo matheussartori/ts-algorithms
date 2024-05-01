@@ -354,5 +354,23 @@
   },
   "algorithm.linearArraySearch.endOfArray": {
     "message": "Não, fim do array, retorna -1."
+  },
+  "algorithm.binarySearchArray.isItEqual_1": {
+    "message": "O item do array no índice mid ("
+  },
+  "algorithm.binarySearchArray.isItEqual_2": {
+    "message": ") é igual ao alvo "
+  },
+  "algorithm.binarySearchArray.biggerThan": {
+    "message": "Não, é maior do que o elemento que estamos procurando, então vamos atualizar a variável high com mid - 1. This step eliminates every position after mid, since the element it's not there."
+  },
+  "algorithm.binarySearchArray.smallerThan": {
+    "message": "Não, é menor do que o eelmento que estamos procurando, então vamos atualizar a variável low com mid + 1. This step eliminates every position before mid, since the element it's not there."
+  },
+  "algorithm.binarySearchArray.elementFound": {
+    "message": "Yes, return the mid index "
+  },
+  "algorithm.binarySearchArray.elementNotFound": {
+    "message": "The target number is not in the array. Return -1."
   }
 }

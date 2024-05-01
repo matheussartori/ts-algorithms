@@ -20,3 +20,8 @@
 .disabled {
   background-color: var(--ifm-color-disabled);
 }
+
+.small {
+  width: 36px;
+  height: 36px;
+}

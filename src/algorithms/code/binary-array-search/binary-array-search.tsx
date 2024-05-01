@@ -93,19 +93,20 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
       <div>
         <div className={styles.boxContainer}>
           {array.map((value, index) => (
-            <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div key={index} className={styles.boxItemsContainer}>
               <p style={{ marginBottom: 0 }}>{index}</p>
               <Box
                 isCurrent={currentVersion && index === currentVersion.mid}
                 isDisabled={currentVersion && currentVersion.eliminatedIndexes.includes(index)}
                 isActive={currentVersion && element === array[currentVersion.mid] && element === array[index]}
+                size="sm"
               >
                 {value}
               </Box>
             </div>
           ))}
         </div>
-        <div style={{ display: 'flex', gap: '.75rem', marginTop: '.75rem', marginBottom: '.75rem' }}>
+        <div className={styles.buttonContainer}>
           <button className="button button--secondary" onClick={handlePrevious} disabled={isPreviousButtonDisabled}>
             <Translate id="algorithm.actions.previous">
               Previous
@@ -118,7 +119,8 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
           </button>
         </div>
         <div>
-          {/* Actions */}
+          <p></p>
+          <p></p>
         </div>
       </div>
       <div>
@@ -128,7 +130,7 @@ export function BinaryArraySearch({ array, element }: BinaryArraySearchProps) {
           {currentVersion && <p>low: {versions.length === 1 ? currentVersion.low : versions[versions.length - 2].low}</p>}
           {currentVersion && <p>high: {versions.length === 1 ? currentVersion.high : versions[versions.length - 2].high}</p>}
           {currentVersion && currentVersion.mid > -1 ? <p>mid: {currentVersion.mid}</p> : <p>mid: null</p>}
-          {currentVersion && <p>return value: {currentVersion.returnValue ?? 'null'}</p>}
+          {currentVersion && <p>return value: {currentVersion.returnValue ?? 'pending'}</p>}
           <p>--------------------------</p>
         </Debugger>
       </div>

@@ -35,7 +35,7 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
       <div style={{ width: '50%' }}>
         <div className={styles.boxContainer}>
           {array.map((value, index) => (
-            <div key={index} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div key={index} className={styles.boxItemsContainer}>
               <p style={{ marginBottom: 0 }}>{index}</p>
               <Box
                 isActive={isBoxActive(index)}
@@ -46,7 +46,7 @@ export function LinearArraySearch ({ array, element }: LinearArraySearchProps) {
             </div>
           ))}
         </div>
-        <div style={{ display: 'flex', gap: '.75rem', marginTop: '.75rem', marginBottom: '.75rem' }}>
+        <div className={styles.buttonContainer}>
           <button className="button button--secondary" onClick={handlePrevious} disabled={isPreviousButtonDisabled}>
             <Translate id="algorithm.actions.previous">
               Previous

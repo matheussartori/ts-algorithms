@@ -368,9 +368,9 @@
     "message": "No, it's smaller than the element we're searching, so we will update the low variable with mid + 1. This step eliminates every position before mid, since the element it's not there."
   },
   "algorithm.binarySearchArray.elementFound": {
-    "message": "Yes, return the mid index "
+    "message": "Yes, return the mid value "
   },
   "algorithm.binarySearchArray.elementNotFound": {
-    "message": "The target number is not in the array. Return -1."
+    "message": "The target number is not in the array, return -1."
   }
 }

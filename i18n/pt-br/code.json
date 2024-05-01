@@ -362,15 +362,15 @@
     "message": ") é igual ao alvo "
   },
   "algorithm.binarySearchArray.biggerThan": {
-    "message": "Não, é maior do que o elemento que estamos procurando, então vamos atualizar a variável high com mid - 1. This step eliminates every position after mid, since the element it's not there."
+    "message": "Não, é maior do que o elemento que estamos procurando, então vamos atualizar a variável high com mid - 1. Esta etapa elimina todas as posições depois de mid, já que o elemento não estava depois deste índice."
   },
   "algorithm.binarySearchArray.smallerThan": {
-    "message": "Não, é menor do que o eelmento que estamos procurando, então vamos atualizar a variável low com mid + 1. This step eliminates every position before mid, since the element it's not there."
+    "message": "Não, é menor do que o elemento que estamos procurando, então vamos atualizar a variável low com mid + 1. Esta etapa elimina todas as posições antes de mid, já que o elemento não estava antes deste índice."
   },
   "algorithm.binarySearchArray.elementFound": {
-    "message": "Yes, return the mid index "
+    "message": "Sim, retorne o valor de mid "
   },
   "algorithm.binarySearchArray.elementNotFound": {
-    "message": "The target number is not in the array. Return -1."
+    "message": "O elemento alvo não está no array, retorna -1."
   }
 }

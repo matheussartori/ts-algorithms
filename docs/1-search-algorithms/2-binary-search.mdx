@@ -37,7 +37,7 @@ Let's illustrate binary search with a simple TypeScript example. Suppose we have
 const numbers: number[] = [2, 3, 5, 6, 8, 10]
 ```
 
-Now, let's say we want to find the index of the number 6 using binary search:
+Now, let's try to find where the number 6 is in this array. We would write a binary search function like this:
 
 ```typescript
 function binarySearch (array: number[], target: number): number {
@@ -84,6 +84,7 @@ console.log("Index of 6:", targetIndex) // Output: Index of 6: 3
 <BinaryArraySearch array={[2, 4, 5, 7, 9, 10, 13, 18, 22, 31]} element={3} />
 
 ### Advantages of Binary Search
+
 Binary search offers several advantages over linear search:
 
 - **Optimization**: By dividing the search space in half with each iteration, binary search rapidly converges on the

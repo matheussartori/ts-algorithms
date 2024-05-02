@@ -14,6 +14,12 @@ the books in the library, help Librarian Jane find the index of the book with th
 
 If the specified identification number is not found, return -1.
 
+:::note
+
+This problem can be solved by linear search as well, but make sure you solve it using binary search.
+
+:::
+
 ```typescript
 const libraryBooks = [102, 205, 308, 410, 523, 636, 749, 852, 965, 1078]
 const bookId = 410
@@ -22,7 +28,7 @@ findBookIndex(libraryBooks, bookId)
 ```
 
 <Editor
-  editorHeight={150}
+  editorHeight={450}
   args="[102, 205, 308, 410, 523, 636, 749, 852, 965, 1078], 410"
   expectedResult="3"
   initialCode={`function findBookIndex (libraryBooks: number[], bookId: number): number {

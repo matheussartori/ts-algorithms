@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-import { LinearArraySearch } from '../../src/components/Algorithms/linear-array-search'
+import { LinearArraySearch } from '../../src/algorithms/code/linear-array-search/linear-array-search'
 
 # Linear search
 
@@ -19,17 +19,20 @@ const numbers: number[] = [10, 5, 8, 2, 6, 3]
 Now, let's say we want to find the index of a specific number in this array, for example 6. We would write a linear search function like this:
 
 ```typescript
-function linearSearch (arr: number[], target: number): number {
-  for (let i = 0; i < arr.length; i++) { // Loop through the array
-    if (arr[i] === target) { // Checks if the current element is equal to the target
+function linearSearch (array: number[], target: number): number {
+  if (array.length === 0) return -1 // Return -1 if the array is empty
+
+  for (let i = 0; i < array.length; i++) { // Loop through the array
+    if (array[i] === target) { // Checks if the current element is equal to the target
       return i // Return the index if the target is found
     }
   }
+
   return -1 // Return -1 if the target is not found
 }
 ```
 
-Now, let's use this function to find the index of the number 6 in the numbers array:
+Let's use this function to find the index of the number 6 in the numbers array:
 
 ```typescript
 const targetIndex = linearSearch(numbers, 6)
@@ -44,7 +47,15 @@ search methods may be faster, but linear search is still important for understan
 
 ### Visual example
 
+#### Element exists in array: `6`
+
 <LinearArraySearch array={[10, 5, 8, 2, 6, 3]} element={6} />
+
+<hr />
+
+#### Element does not exists in array: `3`
+
+<LinearArraySearch array={[15, 2, 6, 8, 1, 9]} element={3} />
 
 ### Other methods of linear search
 

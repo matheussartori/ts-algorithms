@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-import { LinearArraySearch } from '../../../../../src/components/Algorithms/linear-array-search'
+import { LinearArraySearch } from '../../../../../src/algorithms/code/linear-array-search/linear-array-search'
 
 # Busca linear
 
@@ -19,21 +19,24 @@ const numeros: number[] = [10, 5, 8, 2, 6, 3]
 Agora, digamos que queremos encontrar o índice de um número específico neste array, por exemplo o 6. Escreveríamos uma função de busca linear assim:
 
 ```typescript
-function buscaLinear (arr: number[], alvo: number): number {
-  for (let i = 0; i < arr.length; i++) { // Percorre o array
-    if (arr[i] === alvo) { // Verifica se o elemento atual é igual ao alvo
+function buscaLinear (array: number[], alvo: number): number {
+  if (array.length === 0) return -1 // Retorna -1 se o array estiver vazio
+
+  for (let i = 0; i < array.length; i++) { // Percorre o array
+    if (array[i] === alvo) { // Verifica se o elemento atual é igual ao alvo
       return i // Retorna o índice se o alvo for encontrado
     }
   }
+
   return -1 // Retorna -1 se o alvo não for encontrado
 }
 ```
 
-Agora, vamos usar esta função para encontrar o índice do número 6 no array de números:
+Vamos usar esta função para encontrar o índice do número 6 no array de números:
 
 ```typescript
-const targetIndex = buscaLinear(numeros, 6)
-console.log("Índice do número 6:", targetIndex) // Saída: Índice do número 6: 4
+const indiceAlvo = buscaLinear(numeros, 6)
+console.log("Índice do número 6:", indiceAlvo) // Saída: Índice do número 6: 4
 ```
 
 A função retorna 4, que é o índice do número 6 no array de números.
@@ -45,7 +48,15 @@ funcionam.
 
 ### Exemplo visual
 
+#### Elemento existe no array: `6`
+
 <LinearArraySearch array={[10, 5, 8, 2, 6, 3]} element={6} />
+
+<hr />
+
+#### Elemento não existe no array: `3`
+
+<LinearArraySearch array={[15, 2, 6, 8, 1, 9]} element={3} />
 
 ### Outros métodos para a busca linear
 

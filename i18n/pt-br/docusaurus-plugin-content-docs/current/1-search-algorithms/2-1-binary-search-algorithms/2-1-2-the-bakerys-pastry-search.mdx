@@ -4,24 +4,24 @@ sidebar_position: 2
 
 import { Editor } from '../../../../../../src/algorithms/editor/editor'
 
-# 2. The Bakery's Pastry Search
+# 2. Busca de Doces na Padaria
 
-![The Bakery's Pastry Search](./img/2-1-2.png)
+![Busca de Doces na Padaria](./img/2-1-2.png)
 
-In a bustling bakery filled with a delightful array of pastries, each pastry is labeled with a unique code. Baker Sarah
-needs to find a specific pastry on the shelf. Given an array representing the codes of the pastries in the bakery, help
-Baker Sarah find the index of the pastry with the specified code.
+Em uma padaria movimentada repleta de uma variedade encantadora de doces, cada doce é rotulado com um código único. A
+padeira Sarah precisa encontrar um doce específico na prateleira. Dado um array representando os códigos dos doces na
+padaria, ajude a padeira Sarah a encontrar o índice do doce com o código especificado.
 
-If the specified code is not found, return -1.
+Se o código especificado não for encontrado, retorne -1.
 
 :::note
 
-This problem can be solved by linear search as well, but make sure you solve it using binary search.
+Este problema também pode ser resolvido por busca linear, mas certifique-se de resolvê-lo usando busca binária.
 
 :::
 
 ```typescript
-const bakeryPastries = [
+const docesDaPadaria = [
   'CroissantBanana', 'CroissantButtery', 'CroissantCaramel', 'Croissant2022', 'CroissantFlaky',
   'CroissantHazelnut', 'CroissantAlmond', 'CroissantOrange', 'CroissantGourmet', 'CroissantApricot',
   'DanishAlmond', 'DanishApricot', 'DanishCinnamon', 'DanishGourmet', 'DanishHazelnut',
@@ -33,15 +33,15 @@ const bakeryPastries = [
   'SconeBlueberry', 'SconeCherry', 'SconeCranberry', 'SconeLemon', 'SconePeach',
   'SconeStrawberry', 'SconeChocolate', 'SconeCinnamon', 'SconeVanilla', 'SconeHazelnut'
 ]
-const pastryCode = 'SconeLemon'
-findPastryIndex(bakeryPastries, pastryCode)
-// Expected Output: Index of pastry with code SconeLemon (43)
+const codigoDoDoce = 'SconeLemon'
+encontrarIndiceDoDoce(docesDaPadaria, codigoDoDoce)
+// Saída Esperada: Índice do doce com código SconeLemon (43)
 ```
 
 <Editor
   editorHeight={450}
   args="['CroissantBanana', 'CroissantButtery', 'CroissantCaramel', 'Croissant2022', 'CroissantFlaky','CroissantHazelnut', 'CroissantAlmond', 'CroissantOrange', 'CroissantGourmet', 'CroissantApricot', 'DanishAlmond', 'DanishApricot', 'DanishCinnamon', 'DanishGourmet', 'DanishHazelnut','DanishOrange', 'DanishButtery', 'DanishChocolate', 'DanishCranberry', 'DanishLemon','EclairChocolate', 'EclairCoconut', 'EclairDelight', 'EclairMango', 'EclairRaspberry','EclairButterscotch', 'EclairCaramel', 'EclairPineapple', 'EclairSpecial', 'EclairVanilla','MacaronCoffee', 'MacaronHazelnut', 'MacaronLavender', 'MacaronPistachio', 'MacaronRose','MacaronCinnamon', 'MacaronSpecial', 'MacaronVanilla', 'MacaronBlueberry', 'MacaronOrange','SconeBlueberry', 'SconeCherry', 'SconeCranberry', 'SconeLemon', 'SconePeach','SconeStrawberry', 'SconeChocolate', 'SconeCinnamon', 'SconeVanilla', 'SconeHazelnut'], 'SconeLemon'"
   expectedResult="43"
-  initialCode={`function findPastryIndex (bakeryPastries: string[], pastryCode: string): number {
+  initialCode={`function encontrarIndiceDoDoce (docesDaPadaria: string[], codigoDoDoce: string): number {
   return -1
 }`} />

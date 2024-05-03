@@ -4,33 +4,34 @@ sidebar_position: 1
 
 import { Editor } from '../../../../../../src/algorithms/editor/editor'
 
-# 1. The Library's Book Search
+# 1. Busca de Livro na Biblioteca
 
-![The Library's Book Search](./img/2-1-1.png)
+![Busca de Livro na Biblioteca](./img/2-1-1.png)
 
-In a vast library containing thousands of books, each book is labeled with a unique identification number. Librarian
-Jane needs to locate a specific book requested by a patron. Given an array representing the identification numbers of
-the books in the library, help Librarian Jane find the index of the book with the specified identification number.
+Em uma vasta biblioteca contendo milhares de livros, cada livro é rotulado com um número de identificação único. A
+bibliotecária Jane precisa localizar um livro específico solicitado por um usuário. Dado um array representando os
+números de identificação dos livros na biblioteca, ajude a bibliotecária Jane a encontrar o índice do livro com o
+número de identificação especificado.
 
-If the specified identification number is not found, return -1.
+Se o número de identificação especificado não for encontrado, retorne -1.
 
 :::note
 
-This problem can be solved by linear search as well, but make sure you solve it using binary search.
+Este problema também pode ser resolvido por busca linear, mas certifique-se de resolvê-lo usando busca binária.
 
 :::
 
 ```typescript
-const libraryBooks = [102, 205, 308, 410, 523, 636, 749, 852, 965, 1078]
-const bookId = 410
-findBookIndex(libraryBooks, bookId)
-// Expected Output: Index of book with ID 410 (3)
+const livrosDaBiblioteca = [102, 205, 308, 410, 523, 636, 749, 852, 965, 1078]
+const idDoLivro = 410
+encontrarIndiceDoLivro(livrosDaBiblioteca, idDoLivro)
+// Saída Esperada: Índice do livro com ID 410 (3)
 ```
 
 <Editor
   editorHeight={450}
   args="[102, 205, 308, 410, 523, 636, 749, 852, 965, 1078], 410"
   expectedResult="3"
-  initialCode={`function findBookIndex (libraryBooks: number[], bookId: number): number {
+  initialCode={`function encontrarIndiceDoLivro (livrosDaBiblioteca: number[], idDoLivro: number): number {
   return -1
 }`} />

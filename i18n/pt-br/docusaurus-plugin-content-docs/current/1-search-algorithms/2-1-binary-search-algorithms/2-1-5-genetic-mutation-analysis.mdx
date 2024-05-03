@@ -4,33 +4,33 @@ sidebar_position: 5
 
 import { Editor } from '../../../../../../src/algorithms/editor/editor'
 
-# 5. Genetic Mutation Analysis
+# 5. Análise de Mutação Genética
 
-![Genetic Mutation Analysis](./img/2-1-5.png)
+![Análise de Mutação Genética](./img/2-1-5.png)
 
-In a cutting-edge genetic research facility, scientists are analyzing DNA sequences to identify potential mutations.
-Each DNA sequence is represented as a string of nucleotides, where each nucleotide can be one of four letters: A, C, G,
-or T. The research team has discovered that certain sequences of nucleotides are indicative of specific mutations.
-Given a sorted array of DNA sequences, implement a function to search for a target DNA sequence and determine if it
-contains any mutations.
+Em uma instalação de pesquisa genética de ponta, cientistas estão analisando sequências de DNA para identificar
+mutações potenciais. Cada sequência de DNA é representada como uma cadeia de nucleotídeos, onde cada nucleotídeo pode
+ser uma das quatro letras: A, C, G ou T. A equipe de pesquisa descobriu que certas sequências de nucleotídeos são
+indicativas de mutações específicas. Dado um array ordenado de sequências de DNA, implemente uma função para procurar
+por uma sequência de DNA alvo e determinar se ela contém alguma mutação.
 
 :::note
 
-This problem can be solved by linear search as well, but make sure you solve it using binary search.
+Este problema também pode ser resolvido por busca linear, mas certifique-se de resolvê-lo usando busca binária.
 
 :::
 
 ```typescript
-const dnaSequences = ['ACGT', 'CGTA', 'GTAC', 'TACG', 'ATCG']
-const targetSequence = 'ATCG'
-searchForMutation(dnaSequences, targetSequence)
-// Expected Output: Index of closest frequency to 350 (2)
+const sequenciasDNA = ['ACGT', 'CGTA', 'GTAC', 'TACG', 'ATCG']
+const sequenciaAlvo = 'ATCG'
+procurarMutacao(sequenciasDNA, sequenciaAlvo)
+// Saída Esperada: Índice da sequência de DNA alvo (true)
 ```
 
 <Editor
   editorHeight={450}
   args="['ACGT', 'CGTA', 'GTAC', 'TACG', 'ATCG'], 'ATCG'"
   expectedResult={true}
-  initialCode={`function searchForMutation (dnaSequences: string[], targetSequence: string): boolean {
+  initialCode={`function procurarMutacao (sequenciasDNA: string[], sequenciaAlvo: string): boolean {
   return false
 }`} />

@@ -4,33 +4,33 @@ sidebar_position: 3
 
 import { Editor } from '../../../../../../src/algorithms/editor/editor'
 
-# 3. Spacecraft's Navigation System
+# 3. Sistema de Navegação da Espaçonave
 
-![Spacecraft's Navigation System](./img/2-1-3.png)
+![Sistema de Navegação da Espaçonave](./img/2-1-3.png)
 
-In a distant galaxy, a spacecraft is exploring uncharted territories. The navigation system of the spacecraft relies on
-a series of unique beacon signals emitted by celestial bodies. Given a sorted array representing the frequencies of the
-beacon signals, the spacecraft needs to find the frequency closest to a specified target frequency. However, due to
-interference from cosmic radiation, some signals may be corrupted or missing. Implement a function to find the closest
-frequency to the target frequency.
+Em uma galáxia distante, uma espaçonave está explorando territórios desconhecidos. O sistema de navegação da espaçonave
+depende de uma série de sinais de farol únicos emitidos por corpos celestes. Dado um array ordenado representando as
+frequências dos sinais de farol, a espaçonave precisa encontrar a frequência mais próxima de uma frequência-alvo
+especificada. No entanto, devido à interferência da radiação cósmica, alguns sinais podem estar corrompidos ou ausentes.
+Implemente uma função para encontrar a frequência mais próxima da frequência-alvo.
 
 :::note
 
-This problem can be solved by linear search as well, but make sure you solve it using binary search.
+Este problema também pode ser resolvido por busca linear, mas certifique-se de resolvê-lo usando busca binária.
 
 :::
 
 ```typescript
-const beaconFrequencies = [100, 200, 300, 400, 500]
-const targetFrequency = 350
-findClosestFrequency(beaconFrequencies, targetFrequency)
-// Expected Output: Index of closest frequency to 350 (2)
+const frequenciasDoFarol = [100, 200, 300, 400, 500]
+const frequenciaAlvo = 350
+encontrarFrequenciaMaisProxima(frequenciasDoFarol, frequenciaAlvo)
+// Saída Esperada: Índice da frequência mais próxima de 350 (2)
 ```
 
 <Editor
   editorHeight={450}
   args="[100, 200, 300, 400, 500], 350"
   expectedResult="2"
-  initialCode={`function findClosestFrequency (beaconFrequencies: number[], targetFrequency: number): number {
+  initialCode={`function encontrarFrequenciaMaisProxima (frequenciasDoFarol: number[], frequenciaAlvo: number): number {
   return 0
 }`} />

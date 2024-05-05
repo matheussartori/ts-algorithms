@@ -1,5 +1,11 @@
 # ts-algorithms
 
+## 1.1.1
+
+### Patch Changes
+
+- Fixed css issue on pt-br i18n
+
 ## 1.1.0
 
 ### Minor Changes

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Box } from '@site/src/algorithms/ui/box/box'
 import Translate from '@docusaurus/Translate'
-import styles from '../styles.module.css'
+import styles from './styles.module.css'
 import { Debugger } from '../../ui/debugger/debugger'
 
 interface BinaryArraySearchProps {

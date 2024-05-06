@@ -1,5 +1,11 @@
 # ts-algorithms
 
+## 1.1.2
+
+### Patch Changes
+
+- Fixed css cascade on debugger
+
 ## 1.1.1
 
 ### Patch Changes

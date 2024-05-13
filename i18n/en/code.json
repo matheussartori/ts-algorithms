@@ -372,5 +372,17 @@
   },
   "algorithm.binarySearchArray.elementNotFound": {
     "message": "The target number is not in the array, return -1."
+  },
+  "editor.testPanel.input": {
+    "message": "Input"
+  },
+  "editor.testPanel.expectedOutput": {
+    "message": "Expected output"
+  },
+  "editor.testPanel.output": {
+    "message": "Output"
+  },
+  "editor.testPanel.result": {
+    "message": "Result"
   }
 }

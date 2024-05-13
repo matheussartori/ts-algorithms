@@ -5,18 +5,21 @@ import { transpile } from 'typescript'
 import Admonition from '@theme/Admonition'
 import Translate, { translate } from '@docusaurus/Translate'
 import styles from './styles.module.css'
+import { TestPanel } from './test-panel'
 
 interface EditorProps {
   initialCode?: string
   expectedResult: string
   args: string
   editorHeight?: number
-  tests?: Array<{ input: string; output: string }>
+  tests?: Array<{ id: string, input: string; expectedOutput: string }>
 }
 
-interface Test {
+export interface Test {
+  id: string
   input: string
-  output: string
+  output?: string
+  expectedOutput: string
   isCorrect?: boolean
 }
 
@@ -24,6 +27,7 @@ export function Editor({ initialCode, expectedResult, args, tests, editorHeight 
   const { colorMode } = useColorMode()
   const [output, setOutput] = useState('')
   const codeRef = useRef(initialCode ?? '')
+  const [testResults, setTestResults] = useState<Test[]>(tests)
 
   const executeCode = () => {
     try {
@@ -59,7 +63,7 @@ export function Editor({ initialCode, expectedResult, args, tests, editorHeight 
   }
 
   const executeTests = () => {
-    for (const test of tests) {
+    for (const test of testResults) {
       try {
         const workerCode = `
           onmessage = function(e) {
@@ -83,7 +87,8 @@ export function Editor({ initialCode, expectedResult, args, tests, editorHeight 
 
         worker.onmessage = (e) => {
           clearTimeout(timeout)
-          console.log(e.data, test.output)
+          const result = e.data == test.expectedOutput
+          setTestResults((prev) => prev.map((testItem) => (testItem.id === test.id ? { ...testItem, isCorrect: result, output: e.data } : testItem)))
         }
 
         worker.postMessage({ code: transpile(codeRef.current) })
@@ -137,6 +142,7 @@ export function Editor({ initialCode, expectedResult, args, tests, editorHeight 
         </Admonition>
       )}
       </div>
+      <TestPanel tests={testResults} />
     </>
   )
 }

@@ -372,5 +372,17 @@
   },
   "algorithm.binarySearchArray.elementNotFound": {
     "message": "O elemento alvo não está no array, retorna -1."
+  },
+  "editor.testPanel.input": {
+    "message": "Entrada"
+  },
+  "editor.testPanel.expectedOutput": {
+    "message": "Saída esperada"
+  },
+  "editor.testPanel.output": {
+    "message": "Saída"
+  },
+  "editor.testPanel.result": {
+    "message": "Resultado"
   }
 }
